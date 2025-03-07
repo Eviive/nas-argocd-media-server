@@ -1,0 +1,9 @@
+apiVersion: storage.k8s.io/v1
+kind: StorageClass
+metadata:
+  name: jellyfin-nfs
+parameters:
+  pathPattern: "${.PVC.namespace}/${.PVC.name}"
+provisioner: nfs-provisioner
+reclaimPolicy: Retain
+volumeBindingMode: WaitForFirstConsumer
