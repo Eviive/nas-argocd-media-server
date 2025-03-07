@@ -1,0 +1,14 @@
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+metadata:
+  name: application
+  finalizers:
+    - resources-finalizer.argocd.argoproj.io
+spec:
+  project: media-server
+  source:
+    targetRevision: "*.*.*"
+  syncPolicy:
+    syncOptions:
+      - RespectIgnoreDifferences=true
+  revisionHistoryLimit: 10

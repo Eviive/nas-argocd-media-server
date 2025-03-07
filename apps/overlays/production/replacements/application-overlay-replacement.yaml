@@ -1,0 +1,12 @@
+source:
+  kind: ConfigMap
+  name: media-server-apps-overlay
+  fieldPath: data.path
+targets:
+  - select:
+      kind: Application
+    fieldPaths:
+      - spec.source.path
+    options:
+      delimiter: /
+      index: 1

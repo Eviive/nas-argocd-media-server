@@ -1,0 +1,9 @@
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+metadata:
+  name: application
+spec:
+  source:
+    repoURL: https://github.com/Eviive/nas-argocd-media-server
+  destination:
+    server: https://kubernetes.default.svc
