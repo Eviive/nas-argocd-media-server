@@ -35,8 +35,8 @@ spec:
         - name: gluetun
           image: qmcgaw/gluetun:v3.40.0
           env:
-            - name: VPNSP
-              value: "protonvpn"
+            - name: VPN_SERVICE_PROVIDER
+              value: protonvpn
             - name: OPENVPN_USER
               valueFrom:
                 secretKeyRef:
@@ -47,8 +47,8 @@ spec:
                 secretKeyRef:
                   name: qbittorrent-gluetun-protonvpn
                   key: PROTONVPN_PASSWORD
-            - name: COUNTRY
-              value: "Germany"
+            - name: SERVER_COUNTRIES
+              value: Switzerland
           securityContext:
             capabilities:
               add:
