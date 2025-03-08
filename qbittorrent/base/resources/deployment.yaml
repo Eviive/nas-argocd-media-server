@@ -40,12 +40,12 @@ spec:
             - name: OPENVPN_USER
               valueFrom:
                 secretKeyRef:
-                  name: gluetun-protonvpn
+                  name: qbittorrent-gluetun-protonvpn
                   key: PROTONVPN_USER
             - name: OPENVPN_PASSWORD
               valueFrom:
                 secretKeyRef:
-                  name: gluetun-protonvpn
+                  name: qbittorrent-gluetun-protonvpn
                   key: PROTONVPN_PASSWORD
             - name: COUNTRY
               value: "Germany"
