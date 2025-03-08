@@ -1,0 +1,13 @@
+apiVersion: kustomize.config.k8s.io/v1beta1
+kind: Kustomization
+namespace: radarr
+resources:
+  - resources/ns.yaml
+  - resources/deployment.yaml
+  - resources/nfs-storage-class.yaml
+  - resources/config-pvc.yaml
+  - resources/videos-pvc.yaml
+  - resources/downloads-pvc.yaml
+  - resources/svc.yaml
+  - resources/ingr.yaml
+  - resources/cert.yaml
