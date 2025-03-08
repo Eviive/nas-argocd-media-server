@@ -1,0 +1,9 @@
+apiVersion: cert-manager.io/v1
+kind: Certificate
+metadata:
+  name: jackett
+spec:
+  secretName: jackett-tls
+  issuerRef:
+    kind: ClusterIssuer
+    name: cert-manager-cloudflare
