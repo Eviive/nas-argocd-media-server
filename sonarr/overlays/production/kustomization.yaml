@@ -1,0 +1,13 @@
+apiVersion: kustomize.config.k8s.io/v1beta1
+kind: Kustomization
+resources:
+  - ../../base
+patches:
+  - path: patches/ingr.yaml
+    target:
+      kind: IngressRoute
+      name: sonarr
+  - path: patches/cert.yaml
+    target:
+      kind: Certificate
+      name: sonarr
