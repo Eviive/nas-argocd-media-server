@@ -1,17 +1,17 @@
 apiVersion: traefik.io/v1alpha1
 kind: IngressRoute
 metadata:
-  name: jackett
+  name: prowlarr
 spec:
   entryPoints:
     - websecure
   routes:
     - kind: Rule
       services:
-        - name: jackett
+        - name: prowlarr
           port: 80
       middlewares:
         - name: traefik-error-pages
           namespace: traefik
   tls:
-    secretName: jackett-tls
+    secretName: prowlarr-tls

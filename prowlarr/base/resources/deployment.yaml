@@ -1,20 +1,20 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: jackett
+  name: prowlarr
 spec:
   replicas: 1
   selector:
     matchLabels:
-      app: jackett
+      app: prowlarr
   template:
     metadata:
       labels:
-        app: jackett
+        app: prowlarr
     spec:
       containers:
-        - name: jackett
-          image: linuxserver/jackett:0.22.1556
+        - name: prowlarr
+          image: linuxserver/prowlarr:1.30.2
           env:
             - name: PUID
               value: "1057"
@@ -24,8 +24,8 @@ spec:
             - name: config
               mountPath: /config
           ports:
-            - containerPort: 9117
+            - containerPort: 9696
       volumes:
         - name: config
           persistentVolumeClaim:
-            claimName: jackett-config
+            claimName: prowlarr-config

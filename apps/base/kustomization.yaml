@@ -6,7 +6,7 @@ resources:
   - resources/jellyfin.yaml
   - resources/sonarr.yaml
   - resources/radarr.yaml
-  - resources/jackett.yaml
+  - resources/prowlarr.yaml
   - resources/qbittorrent.yaml
 patches:
   - path: patches/application.yaml

@@ -6,8 +6,8 @@ patches:
   - path: patches/ingr.yaml
     target:
       kind: IngressRoute
-      name: jackett
+      name: prowlarr
   - path: patches/cert.yaml
     target:
       kind: Certificate
-      name: jackett
+      name: prowlarr
