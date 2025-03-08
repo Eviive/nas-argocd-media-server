@@ -23,7 +23,7 @@ spec:
           volumeMounts:
             - name: config
               mountPath: /config
-            - name: videos
+            - name: shows
               mountPath: /tv
             - name: downloads
               mountPath: /downloads
@@ -33,9 +33,9 @@ spec:
         - name: config
           persistentVolumeClaim:
             claimName: sonarr-config
-        - name: videos
+        - name: shows
           persistentVolumeClaim:
-            claimName: sonarr-videos
+            claimName: sonarr-shows
         - name: downloads
           persistentVolumeClaim:
             claimName: sonarr-downloads
