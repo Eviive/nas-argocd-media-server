@@ -1,0 +1,9 @@
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+metadata:
+  name: jackett
+spec:
+  source:
+    path: jackett/$OVERLAY
+  destination:
+    namespace: jackett

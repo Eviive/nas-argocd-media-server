@@ -1,0 +1,9 @@
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+metadata:
+  name: sonarr
+spec:
+  source:
+    path: sonarr/$OVERLAY
+  destination:
+    namespace: sonarr

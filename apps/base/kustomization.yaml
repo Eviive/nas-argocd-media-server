@@ -4,6 +4,10 @@ namespace: argocd
 resources:
   - resources/overlay-cm.yaml
   - resources/jellyfin.yaml
+  - resources/sonarr.yaml
+  - resources/radarr.yaml
+  - resources/jackett.yaml
+  - resources/qbittorrent.yaml
 patches:
   - path: patches/application.yaml
     target:
