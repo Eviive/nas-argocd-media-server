@@ -14,7 +14,7 @@ spec:
     spec:
       containers:
         - name: jellyfin
-          image: jellyfin/jellyfin:2025030305
+          image: jellyfin/jellyfin:10.10.6
           volumeMounts:
             - name: config
               mountPath: /config
