@@ -6,7 +6,7 @@ resources:
   - resources/deployment.yaml
   - resources/nfs-storage-class.yaml
   - resources/config-pvc.yaml
-  - resources/videos-pvc.yaml
+  - resources/movies-pvc.yaml
   - resources/downloads-pvc.yaml
   - resources/svc.yaml
   - resources/ingr.yaml

@@ -1,13 +1,13 @@
 apiVersion: v1
 kind: PersistentVolumeClaim
 metadata:
-  name: radarr-videos
+  name: jellyfin-movies
   annotations:
-    folder: videos
+    folder: movies
 spec:
   accessModes:
     - ReadWriteOnce
   resources:
     requests:
-      storage: 400Gi
-  storageClassName: radarr-nfs
+      storage: 200Gi
+  storageClassName: jellyfin-nfs

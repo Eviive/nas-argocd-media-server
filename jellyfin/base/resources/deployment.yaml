@@ -18,14 +18,19 @@ spec:
           volumeMounts:
             - name: config
               mountPath: /config
-            - name: videos
-              mountPath: /data/videos
+            - name: shows
+              mountPath: /data/shows
+            - name: movies
+              mountPath: /data/movies
           ports:
             - containerPort: 8096
       volumes:
         - name: config
           persistentVolumeClaim:
             claimName: jellyfin-config
-        - name: videos
+        - name: shows
           persistentVolumeClaim:
-            claimName: jellyfin-videos
+            claimName: jellyfin-shows
+        - name: movies
+          persistentVolumeClaim:
+            claimName: jellyfin-movies
