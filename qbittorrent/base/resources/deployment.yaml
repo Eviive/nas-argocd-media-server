@@ -4,6 +4,8 @@ metadata:
   name: qbittorrent
 spec:
   replicas: 1
+  strategy:
+    type: Recreate
   selector:
     matchLabels:
       app: qbittorrent
@@ -34,6 +36,10 @@ spec:
             - containerPort: 8080
         - name: gluetun
           image: qmcgaw/gluetun:v3.40.0
+          lifecycle:
+            postStart:
+              exec:
+                command: [ "/bin/sh", "-c", "(ip rule del table 51820; ip -6 rule del table 51820) || true" ]
           env:
             - name: VPN_SERVICE_PROVIDER
               value: protonvpn
@@ -50,6 +56,8 @@ spec:
             - name: SERVER_COUNTRIES
               value: Switzerland
             - name: PORT_FORWARD_ONLY
+              value: "on"
+            - name: VPN_PORT_FORWARDING
               value: "on"
           securityContext:
             capabilities:
