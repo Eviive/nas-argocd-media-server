@@ -3,6 +3,10 @@ kind: Kustomization
 resources:
   - ../../base
 patches:
+  - path: patches/deployment.yaml
+    target:
+      kind: Deployment
+      name: qbittorrent
   - path: patches/ingr.yaml
     target:
       kind: IngressRoute

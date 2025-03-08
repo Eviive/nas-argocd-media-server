@@ -49,6 +49,8 @@ spec:
                   key: PROTONVPN_PASSWORD
             - name: SERVER_COUNTRIES
               value: Switzerland
+            - name: PORT_FORWARD_ONLY
+              value: "on"
           securityContext:
             capabilities:
               add:
