@@ -10,4 +10,4 @@ spec:
   resources:
     requests:
       storage: 400Gi
-  storageClassName: qbittorrent-nfs
+  storageClassName: qbittorrent-nfs-hdd

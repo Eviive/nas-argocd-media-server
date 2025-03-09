@@ -1,9 +1,9 @@
 apiVersion: storage.k8s.io/v1
 kind: StorageClass
 metadata:
-  name: sonarr-nfs
+  name: jellyfin-nfs-hdd
 parameters:
   pathPattern: "media-server/${.PVC.annotations.folder}"
-provisioner: nfs-ssd-provisioner
+provisioner: nfs-hdd-provisioner
 reclaimPolicy: Retain
 volumeBindingMode: WaitForFirstConsumer

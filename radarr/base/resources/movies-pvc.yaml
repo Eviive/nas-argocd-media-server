@@ -10,4 +10,4 @@ spec:
   resources:
     requests:
       storage: 200Gi
-  storageClassName: radarr-nfs
+  storageClassName: radarr-nfs-hdd

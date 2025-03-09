@@ -10,4 +10,4 @@ spec:
   resources:
     requests:
       storage: 400Gi
-  storageClassName: sonarr-nfs
+  storageClassName: sonarr-nfs-hdd
