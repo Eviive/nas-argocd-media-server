@@ -4,6 +4,6 @@ metadata:
   name: jellyfin-nfs
 parameters:
   pathPattern: "media-server/${.PVC.annotations.folder}"
-provisioner: nfs-provisioner
+provisioner: nfs-ssd-provisioner
 reclaimPolicy: Retain
 volumeBindingMode: WaitForFirstConsumer
