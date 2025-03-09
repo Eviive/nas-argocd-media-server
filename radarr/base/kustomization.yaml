@@ -5,6 +5,7 @@ resources:
   - resources/ns.yaml
   - resources/deployment.yaml
   - resources/nfs-ssd-sc.yaml
+  - resources/nfs-hdd-sc.yaml
   - resources/config-pvc.yaml
   - resources/movies-pvc.yaml
   - resources/downloads-pvc.yaml
