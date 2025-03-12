@@ -1,5 +1,31 @@
 - op: add
   path: /spec/template/spec/containers/1/env/-
   value:
+    name: VPN_SERVICE_PROVIDER
+    value: protonvpn
+- op: add
+  path: /spec/template/spec/containers/1/env/-
+  value:
+    name: OPENVPN_USER
+    valueFrom:
+      secretKeyRef:
+        name: qbittorrent-gluetun-protonvpn
+        key: PROTONVPN_USER
+- op: add
+  path: /spec/template/spec/containers/1/env/-
+  value:
+    name: OPENVPN_PASSWORD
+    valueFrom:
+      secretKeyRef:
+        name: qbittorrent-gluetun-protonvpn
+        key: PROTONVPN_PASSWORD
+- op: add
+  path: /spec/template/spec/containers/1/env/-
+  value:
+    name: SERVER_COUNTRIES
+    value: Switzerland,Germany,Netherlands
+- op: add
+  path: /spec/template/spec/containers/1/env/-
+  value:
     name: VPN_PORT_FORWARDING_UP_COMMAND
     value: /bin/sh -c 'wget -O- --retry-connrefused --post-data "json={\"listen_port\":{{PORTS}}}" http://localhost:8080/api/v2/app/setPreferences 2>&1'

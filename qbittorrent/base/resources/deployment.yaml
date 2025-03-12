@@ -41,20 +41,6 @@ spec:
               exec:
                 command: [ "/bin/sh", "-c", "(ip rule del table 51820; ip -6 rule del table 51820) || true" ]
           env:
-            - name: VPN_SERVICE_PROVIDER
-              value: protonvpn
-            - name: OPENVPN_USER
-              valueFrom:
-                secretKeyRef:
-                  name: qbittorrent-gluetun-protonvpn
-                  key: PROTONVPN_USER
-            - name: OPENVPN_PASSWORD
-              valueFrom:
-                secretKeyRef:
-                  name: qbittorrent-gluetun-protonvpn
-                  key: PROTONVPN_PASSWORD
-            - name: SERVER_COUNTRIES
-              value: Switzerland
             - name: PORT_FORWARD_ONLY
               value: "on"
             - name: VPN_PORT_FORWARDING
