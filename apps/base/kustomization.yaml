@@ -8,6 +8,7 @@ resources:
   - resources/radarr.yaml
   - resources/prowlarr.yaml
   - resources/qbittorrent.yaml
+  - resources/bazarr.yaml
 patches:
   - path: patches/application.yaml
     target:
