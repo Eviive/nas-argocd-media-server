@@ -1,0 +1,41 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: bazarr
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: bazarr
+  template:
+    metadata:
+      labels:
+        app: bazarr
+    spec:
+      containers:
+        - name: bazarr
+          image: linuxserver/bazarr:1.5.1
+          env:
+            - name: PUID
+              value: "1057"
+            - name: PGID
+              value: "1056"
+          volumeMounts:
+            - name: config
+              mountPath: /config
+            - name: shows
+              mountPath: /tv
+            - name: movies
+              mountPath: /movies
+          ports:
+            - containerPort: 8989
+      volumes:
+        - name: config
+          persistentVolumeClaim:
+            claimName: bazarr-config
+        - name: shows
+          persistentVolumeClaim:
+            claimName: bazarr-shows
+        - name: movies
+          persistentVolumeClaim:
+            claimName: bazarr-movies

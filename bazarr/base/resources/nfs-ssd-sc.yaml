@@ -1,0 +1,9 @@
+apiVersion: storage.k8s.io/v1
+kind: StorageClass
+metadata:
+  name: bazarr-nfs-ssd
+parameters:
+  pathPattern: "media-server/${.PVC.annotations.folder}"
+provisioner: nfs-ssd-provisioner
+reclaimPolicy: Retain
+volumeBindingMode: WaitForFirstConsumer

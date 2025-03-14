@@ -1,0 +1,14 @@
+apiVersion: kustomize.config.k8s.io/v1beta1
+kind: Kustomization
+namespace: bazarr
+resources:
+  - resources/ns.yaml
+  - resources/deployment.yaml
+  - resources/nfs-ssd-sc.yaml
+  - resources/nfs-hdd-sc.yaml
+  - resources/config-pvc.yaml
+  - resources/shows-pvc.yaml
+  - resources/movies-pvc.yaml
+  - resources/svc.yaml
+  - resources/ingr.yaml
+  - resources/cert.yaml
