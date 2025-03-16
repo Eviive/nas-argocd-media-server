@@ -21,3 +21,8 @@
       secretKeyRef:
         name: qbittorrent-gluetun-protonvpn
         key: WIREGUARD_PRIVATE_KEY
+- op: add
+  path: /spec/template/spec/containers/1/env/-
+  value:
+    name: DOT
+    value: "off"
