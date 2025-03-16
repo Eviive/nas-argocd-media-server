@@ -15,3 +15,7 @@ patches:
     target:
       kind: Certificate
       name: qbittorrent
+  - path: patches/trackers-cronjob.yaml
+    target:
+      kind: CronJob
+      name: qbittorrent-trackers

@@ -12,3 +12,4 @@ resources:
   - resources/svc.yaml
   - resources/ingr.yaml
   - resources/cert.yaml
+  - resources/trackers-cronjob.yaml

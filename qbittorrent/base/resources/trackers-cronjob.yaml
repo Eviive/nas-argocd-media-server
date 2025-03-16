@@ -1,0 +1,30 @@
+apiVersion: batch/v1
+kind: CronJob
+metadata:
+  name: qbittorrent-trackers
+spec:
+  schedule: "30 * * * *"
+  concurrencyPolicy: Forbid
+  failedJobsHistoryLimit: 3
+  jobTemplate:
+    spec:
+      template:
+        spec:
+          containers:
+            - name: trackers
+              image: bash
+              imagePullPolicy: IfNotPresent
+              env:
+                - name: QBITTORRENT_HOST
+                  value: http://qbittorrent.qbittorrent.svc.cluster.local
+                - name: QBITTORRENT_USERNAME
+                  valueFrom:
+                    secretKeyRef:
+                      name: qbittorrent
+                      key: QBITTORRENT_USERNAME
+                - name: QBITTORRENT_PASSWORD
+                  valueFrom:
+                    secretKeyRef:
+                      name: qbittorrent
+                      key: QBITTORRENT_PASSWORD
+          restartPolicy: OnFailure
