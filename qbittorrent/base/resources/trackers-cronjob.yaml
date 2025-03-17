@@ -12,7 +12,7 @@ spec:
         spec:
           containers:
             - name: trackers
-              image: bash
+              image: alpine:latest
               imagePullPolicy: IfNotPresent
               env:
                 - name: QBITTORRENT_HOST
