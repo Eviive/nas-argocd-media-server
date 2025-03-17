@@ -1,13 +1,14 @@
 - op: replace
   path: /spec/jobTemplate/spec/template/spec/containers/0/command
   value:
-    - /bin/sh
+    - /bin/bash
 - op: replace
   path: /spec/jobTemplate/spec/template/spec/containers/0/args
   value:
-    - '-c'
-    - >
-      apk add --no-cache curl && \
-      curl -fsSLo /tmp/script.sh https://raw.githubusercontent.com/Eviive/nas-scripts/main/qbittorrent/trackers/update-trackers.sh && \
-      chmod +x /tmp/script.sh && \
-      /tmp/script.sh
+      - '-c'
+      - >
+        apt-get -qq update; \
+        apt-get -qq install -y curl jq; \
+        curl -fsSLo /tmp/update-trackers.sh https://raw.githubusercontent.com/Eviive/nas-scripts/main/qbittorrent/trackers/update-trackers.sh; \
+        chmod +x /tmp/update-trackers.sh; \
+        bash /tmp/update-trackers.sh
