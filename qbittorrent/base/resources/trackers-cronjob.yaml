@@ -12,7 +12,7 @@ spec:
         spec:
           containers:
             - name: trackers
-              image: ubuntu:latest
+              image: bash:latest
               imagePullPolicy: IfNotPresent
               env:
                 - name: QBITTORRENT_HOST
