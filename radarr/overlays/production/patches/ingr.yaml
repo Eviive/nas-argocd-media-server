@@ -7,3 +7,18 @@
 - op: replace
   path: /spec/routes/0/services/0/namespace
   value: authentik
+- op: add
+  path: /spec/routes/-
+  value:
+    kind: Rule
+    match: Host(`radarr.home.albertv.dev`) && PathPrefix(`/outpost.goauthentik.io/`)
+    services:
+      - name: ak-outpost-authentik-embedded-outpost
+        namespace: authentik
+        port: 9000
+- op: add
+  path: /spec/routes/0/middlewares/-
+  value:
+    name: ak-outpost-authentik-embedded-outpost
+    namespace: authentik
+
