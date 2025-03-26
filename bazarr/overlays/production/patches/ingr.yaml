@@ -1,12 +1,6 @@
 - op: replace
   path: /spec/routes/0/match
   value: Host(`bazarr.home.albertv.dev`)
-- op: replace
-  path: /spec/routes/0/services/0/name
-  value: authentik-server
-- op: replace
-  path: /spec/routes/0/services/0/namespace
-  value: authentik
 - op: add
   path: /spec/routes/-
   value:
