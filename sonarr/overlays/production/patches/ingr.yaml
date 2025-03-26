@@ -9,7 +9,7 @@
     services:
       - name: ak-outpost-authentik-embedded-outpost
         namespace: authentik
-        port: 9000
+        port: http
 - op: add
   path: /spec/routes/0/middlewares/-
   value:
