@@ -3,11 +3,11 @@ kind: PersistentVolumeClaim
 metadata:
   name: bazarr-config
   annotations:
-    folder: bazarr/config
+    folder: media-server/bazarr/config
 spec:
   accessModes:
     - ReadWriteOnce
   resources:
     requests:
       storage: 10Gi
-  storageClassName: bazarr-nfs-ssd
+  storageClassName: nfs-ssd-1

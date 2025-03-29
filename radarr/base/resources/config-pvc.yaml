@@ -3,11 +3,11 @@ kind: PersistentVolumeClaim
 metadata:
   name: radarr-config
   annotations:
-    folder: radarr/config
+    folder: media-server/radarr/config
 spec:
   accessModes:
     - ReadWriteOnce
   resources:
     requests:
       storage: 10Gi
-  storageClassName: radarr-nfs-ssd
+  storageClassName: nfs-ssd-1

@@ -3,11 +3,11 @@ kind: PersistentVolumeClaim
 metadata:
   name: bazarr-shows
   annotations:
-    folder: shows
+    folder: media-server/shows
 spec:
   accessModes:
     - ReadWriteOnce
   resources:
     requests:
       storage: 200Gi
-  storageClassName: bazarr-nfs-hdd
+  storageClassName: nfs-hdd-1

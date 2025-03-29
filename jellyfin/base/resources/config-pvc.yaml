@@ -3,11 +3,11 @@ kind: PersistentVolumeClaim
 metadata:
   name: jellyfin-config
   annotations:
-    folder: jellyfin/config
+    folder: media-server/jellyfin/config
 spec:
   accessModes:
     - ReadWriteOnce
   resources:
     requests:
       storage: 10Gi
-  storageClassName: jellyfin-nfs-ssd
+  storageClassName: nfs-ssd-1

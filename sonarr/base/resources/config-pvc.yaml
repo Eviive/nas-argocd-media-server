@@ -3,11 +3,11 @@ kind: PersistentVolumeClaim
 metadata:
   name: sonarr-config
   annotations:
-    folder: sonarr/config
+    folder: media-server/sonarr/config
 spec:
   accessModes:
     - ReadWriteOnce
   resources:
     requests:
       storage: 10Gi
-  storageClassName: sonarr-nfs-ssd
+  storageClassName: nfs-ssd-1

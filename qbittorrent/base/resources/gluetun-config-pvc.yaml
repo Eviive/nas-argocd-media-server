@@ -3,11 +3,11 @@ kind: PersistentVolumeClaim
 metadata:
   name: gluetun-config
   annotations:
-    folder: gluetun/config
+    folder: media-server/gluetun/config
 spec:
   accessModes:
     - ReadWriteOnce
   resources:
     requests:
       storage: 10Gi
-  storageClassName: qbittorrent-nfs-ssd
+  storageClassName: nfs-ssd-1

@@ -3,11 +3,11 @@ kind: PersistentVolumeClaim
 metadata:
   name: radarr-movies
   annotations:
-    folder: movies
+    folder: media-server/movies
 spec:
   accessModes:
     - ReadWriteOnce
   resources:
     requests:
       storage: 200Gi
-  storageClassName: radarr-nfs-hdd
+  storageClassName: nfs-hdd-1

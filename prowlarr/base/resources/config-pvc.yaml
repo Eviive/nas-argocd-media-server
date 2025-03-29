@@ -3,11 +3,11 @@ kind: PersistentVolumeClaim
 metadata:
   name: prowlarr-config
   annotations:
-    folder: prowlarr/config
+    folder: media-server/prowlarr/config
 spec:
   accessModes:
     - ReadWriteOnce
   resources:
     requests:
       storage: 10Gi
-  storageClassName: prowlarr-nfs
+  storageClassName: nfs-ssd-1

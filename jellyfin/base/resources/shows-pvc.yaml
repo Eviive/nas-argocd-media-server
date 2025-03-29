@@ -3,11 +3,11 @@ kind: PersistentVolumeClaim
 metadata:
   name: jellyfin-shows
   annotations:
-    folder: shows
+    folder: media-server/shows
 spec:
   accessModes:
     - ReadWriteOnce
   resources:
     requests:
       storage: 200Gi
-  storageClassName: jellyfin-nfs-hdd
+  storageClassName: nfs-hdd-1

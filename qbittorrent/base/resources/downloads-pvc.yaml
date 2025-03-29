@@ -3,11 +3,11 @@ kind: PersistentVolumeClaim
 metadata:
   name: qbittorrent-downloads
   annotations:
-    folder: downloads
+    folder: media-server/downloads
 spec:
   accessModes:
     - ReadWriteOnce
   resources:
     requests:
       storage: 400Gi
-  storageClassName: qbittorrent-nfs-hdd
+  storageClassName: nfs-hdd-1

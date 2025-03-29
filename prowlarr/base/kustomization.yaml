@@ -4,7 +4,6 @@ namespace: prowlarr
 resources:
   - resources/ns.yaml
   - resources/deployment.yaml
-  - resources/nfs-sc.yaml
   - resources/config-pvc.yaml
   - resources/svc.yaml
   - resources/ingr.yaml

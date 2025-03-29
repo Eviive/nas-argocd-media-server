@@ -3,11 +3,11 @@ kind: PersistentVolumeClaim
 metadata:
   name: qbittorrent-config
   annotations:
-    folder: qbittorrent/config
+    folder: media-server/qbittorrent/config
 spec:
   accessModes:
     - ReadWriteOnce
   resources:
     requests:
       storage: 10Gi
-  storageClassName: qbittorrent-nfs-ssd
+  storageClassName: nfs-ssd-1
