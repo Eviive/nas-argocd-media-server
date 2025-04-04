@@ -7,5 +7,5 @@
   value:
       - -c
       - >-
-        apk add -q curl jq &&
+        apk add -q curl &&
         curl -fsSL https://raw.githubusercontent.com/Eviive/nas-scripts/main/qbittorrent/trackers/update-trackers.sh | bash
