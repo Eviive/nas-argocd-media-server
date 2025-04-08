@@ -12,7 +12,7 @@ spec:
         spec:
           containers:
             - name: trackers
-              image: bash:latest
+              image: bash:5.2.37
               imagePullPolicy: IfNotPresent
               env:
                 - name: QBITTORRENT_HOST
@@ -21,10 +21,10 @@ spec:
                   valueFrom:
                     secretKeyRef:
                       name: qbittorrent
-                      key: QBITTORRENT_USERNAME
+                      key: qbittorrent-username
                 - name: QBITTORRENT_PASSWORD
                   valueFrom:
                     secretKeyRef:
                       name: qbittorrent
-                      key: QBITTORRENT_PASSWORD
+                      key: qbittorrent-password
           restartPolicy: OnFailure

@@ -17,6 +17,7 @@ spec:
       containers:
         - name: qbittorrent
           image: linuxserver/qbittorrent:5.0.4
+          imagePullPolicy: IfNotPresent
           resources:
             limits:
               memory: "2Gi"
@@ -36,6 +37,7 @@ spec:
             - containerPort: 8080
         - name: gluetun
           image: qmcgaw/gluetun:v3.40.0
+          imagePullPolicy: IfNotPresent
           lifecycle:
             postStart:
               exec:
