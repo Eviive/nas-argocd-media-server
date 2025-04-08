@@ -25,7 +25,8 @@ spec:
             - name: config
               mountPath: /config
           ports:
-            - containerPort: 9696
+            - name: http
+              containerPort: 9696
       volumes:
         - name: config
           persistentVolumeClaim:

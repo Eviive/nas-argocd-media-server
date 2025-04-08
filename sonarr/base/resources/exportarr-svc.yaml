@@ -9,6 +9,6 @@ spec:
   ports:
     - name: http-metrics
       port: 9707
-      targetPort: 9707
+      targetPort: http-metrics
   selector:
     app: sonarr

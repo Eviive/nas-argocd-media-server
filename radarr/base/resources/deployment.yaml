@@ -29,7 +29,8 @@ spec:
             - name: downloads
               mountPath: /downloads
           ports:
-            - containerPort: 7878
+            - name: http
+              containerPort: 7878
       volumes:
         - name: config
           persistentVolumeClaim:

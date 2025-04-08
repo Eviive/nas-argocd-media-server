@@ -34,7 +34,8 @@ spec:
             - name: downloads
               mountPath: /downloads
           ports:
-            - containerPort: 8080
+            - name: http
+              containerPort: 8080
         - name: gluetun
           image: qmcgaw/gluetun:v3.40.0
           imagePullPolicy: IfNotPresent
