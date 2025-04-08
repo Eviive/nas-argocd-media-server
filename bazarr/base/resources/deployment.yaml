@@ -30,7 +30,7 @@ spec:
               mountPath: /movies
           ports:
             - name: http
-              containerPort: 8989
+              containerPort: 6767
       volumes:
         - name: config
           persistentVolumeClaim:
