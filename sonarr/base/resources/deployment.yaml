@@ -31,7 +31,7 @@ spec:
           ports:
             - containerPort: 8989
         - name: sonarr-exporter
-          image: ghcr.io/onedr0p/exportarr:v2.1.0
+          image: ghcr.io/onedr0p/exportarr:v2.0.1
           imagePullPolicy: IfNotPresent
           args:
             - sonarr
