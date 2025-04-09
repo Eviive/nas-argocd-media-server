@@ -6,8 +6,6 @@ metadata:
     - resources-finalizer.argocd.argoproj.io
 spec:
   project: media-server
-  source:
-    targetRevision: "*.*.*"
   syncPolicy:
     syncOptions:
       - RespectIgnoreDifferences=true
