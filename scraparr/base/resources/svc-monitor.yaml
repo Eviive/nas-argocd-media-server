@@ -1,0 +1,13 @@
+apiVersion: monitoring.coreos.com/v1
+kind: ServiceMonitor
+metadata:
+  name: scraparr
+  labels:
+    release: prometheus
+spec:
+  selector:
+    matchLabels:
+      app: scraparr
+  endpoints:
+    - port: http-metrics
+      path: /metrics

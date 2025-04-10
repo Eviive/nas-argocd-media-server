@@ -15,7 +15,6 @@ spec:
       containers:
         - name: prowlarr
           image: linuxserver/prowlarr:1.30.2
-          imagePullPolicy: IfNotPresent
           env:
             - name: PUID
               value: "1057"

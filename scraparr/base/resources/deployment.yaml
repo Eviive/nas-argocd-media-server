@@ -1,0 +1,28 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: scraparr
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: scraparr
+  template:
+    metadata:
+      labels:
+        app: scraparr
+    spec:
+      containers:
+        - name: scraparr
+          image: thegameprofi/scraparr:2.1.2
+          ports:
+            - name: http-metrics
+              containerPort: 7100
+          volumeMounts:
+            - name: config
+              mountPath: /scraparr/config
+              readOnly: true
+      volumes:
+        - name: config
+          secret:
+            secretName: scraparr-config

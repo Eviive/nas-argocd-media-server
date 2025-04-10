@@ -15,7 +15,6 @@ spec:
       containers:
         - name: radarr
           image: linuxserver/radarr:5.19.3
-          imagePullPolicy: IfNotPresent
           env:
             - name: PUID
               value: "1057"
