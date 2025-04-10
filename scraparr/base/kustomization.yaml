@@ -6,3 +6,13 @@ resources:
   - resources/deployment.yaml
   - resources/svc.yaml
   - resources/svc-monitor.yaml
+configMapGenerator:
+  - name: scraparr-grafana-dashboard
+    options:
+      disableNameSuffixHash: true
+      labels:
+        release: prometheus
+      annotations:
+        grafana_folder: Media Server
+    files:
+      - scraparr.json=assets/grafana-dashboard.json
