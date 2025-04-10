@@ -11,7 +11,7 @@ configMapGenerator:
     options:
       disableNameSuffixHash: true
       labels:
-        release: prometheus
+        grafana_dashboard: 1
       annotations:
         grafana_folder: Media Server
     files:
