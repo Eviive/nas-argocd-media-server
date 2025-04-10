@@ -30,38 +30,6 @@ spec:
           ports:
             - name: http
               containerPort: 8989
-        - name: sonarr-exportarr
-          image: ghcr.io/onedr0p/exportarr:v2.0.1
-          args:
-            - sonarr
-          env:
-            - name: PORT
-              value: "9707"
-            - name: URL
-              value: http://sonarr.sonarr.svc.cluster.local
-            - name: APIKEY
-              valueFrom:
-                secretKeyRef:
-                  name: sonarr-exportarr
-                  key: api-key
-          ports:
-            - name: http-metrics
-              containerPort: 9707
-          livenessProbe:
-            httpGet:
-              path: /healthz
-              port: http-metrics
-          readinessProbe:
-            httpGet:
-              path: /healthz
-              port: http-metrics
-          resources:
-            requests:
-              cpu: 100m
-              memory: 64Mi
-            limits:
-              cpu: 500m
-              memory: 256Mi
       volumes:
         - name: config
           persistentVolumeClaim:

@@ -10,5 +10,3 @@ resources:
   - resources/svc.yaml
   - resources/ingr.yaml
   - resources/cert.yaml
-  - resources/exportarr-svc.yaml
-  - resources/exportarr-svc-monitor.yaml
