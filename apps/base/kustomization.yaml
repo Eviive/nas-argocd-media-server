@@ -9,6 +9,7 @@ resources:
   - resources/prowlarr.yaml
   - resources/qbittorrent.yaml
   - resources/bazarr.yaml
+  - resources/scraparr.yaml
 patches:
   - path: patches/application.yaml
     target:
