@@ -2,16 +2,5 @@
   path: /spec/routes/0/match
   value: Host(`prowlarr.home.albertv.dev`)
 - op: add
-  path: /spec/routes/-
-  value:
-    kind: Rule
-    match: Host(`prowlarr.home.albertv.dev`) && PathPrefix(`/outpost.goauthentik.io/`)
-    services:
-      - name: ak-outpost-authentik-embedded-outpost
-        namespace: authentik
-        port: http
-- op: add
-  path: /spec/routes/0/middlewares/-
-  value:
-    name: ak-outpost-authentik-embedded-outpost
-    namespace: authentik
+  path: /spec/routes/1/match
+  value: Host(`prowlarr.home.albertv.dev`) && PathPrefix(`/outpost.goauthentik.io/`)

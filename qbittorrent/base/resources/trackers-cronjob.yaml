@@ -13,6 +13,8 @@ spec:
           containers:
             - name: trackers
               image: bash:5.2.37
+              command:
+                - bash
               env:
                 - name: QBITTORRENT_HOST
                   value: http://qbittorrent.qbittorrent.svc.cluster.local

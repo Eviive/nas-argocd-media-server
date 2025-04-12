@@ -13,5 +13,12 @@ spec:
       middlewares:
         - name: traefik-error-pages
           namespace: traefik
+        - name: ak-outpost-authentik-embedded-outpost
+          namespace: authentik
+    - kind: Rule
+      services:
+        - name: ak-outpost-authentik-embedded-outpost
+          namespace: authentik
+          port: http
   tls:
     secretName: radarr-tls
