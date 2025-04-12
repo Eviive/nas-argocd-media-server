@@ -1,7 +1,4 @@
-apiVersion: cert-manager.io/v1
-kind: Certificate
-metadata:
-  name: sonarr
-spec:
-  dnsNames:
+- op: replace
+  path: /spec/dnsNames
+  value:
     - sonarr.home.albertv.dev

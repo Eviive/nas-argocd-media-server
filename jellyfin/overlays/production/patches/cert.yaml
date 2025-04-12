@@ -1,7 +1,4 @@
-apiVersion: cert-manager.io/v1
-kind: Certificate
-metadata:
-  name: jellyfin
-spec:
-  dnsNames:
+- op: replace
+  path: /spec/dnsNames
+  value:
     - jellyfin.home.albertv.dev
