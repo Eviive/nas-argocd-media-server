@@ -14,7 +14,7 @@ spec:
     spec:
       containers:
         - name: scraparr
-          image: thegameprofi/scraparr:2.2.1
+          image: thegameprofi/scraparr:2.2.4
           ports:
             - name: http-metrics
               containerPort: 7100
