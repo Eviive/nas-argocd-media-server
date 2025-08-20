@@ -14,7 +14,7 @@ spec:
     spec:
       containers:
         - name: radarr
-          image: linuxserver/radarr:5.19.3
+          image: linuxserver/radarr:5.26.2
           env:
             - name: PUID
               value: "1057"
