@@ -1,7 +1,5 @@
-- op: replace
-  path: /spec/jobTemplate/spec/template/spec/containers/0/args
-  value:
-      - -c
-      - >-
-        apk add -q curl &&
-        curl -fsSL https://raw.githubusercontent.com/Eviive/nas-scripts/main/qbittorrent/trackers/update-trackers.sh | bash
+- op: add
+  path: /spec/jobTemplate/spec/template/spec/containers/0/args/-
+  value: >-
+    apk add -q curl &&
+    curl -fsSL https://raw.githubusercontent.com/Eviive/nas-scripts/main/qbittorrent/trackers/update-trackers.sh | bash
