@@ -5,15 +5,6 @@
     ":semanticCommits",
     "mergeConfidence:all-badges"
   ],
-  "enabledManagers": [
-    "argocd",
-    "kubernetes"
-  ],
-  "argocd": {
-    "managerFilePatterns": [
-      "/^(.*\\/)?kustomization\\.yaml$/"
-    ]
-  },
   "kubernetes": {
     "managerFilePatterns": [
       "/^.*deployment\\.yaml$/",
