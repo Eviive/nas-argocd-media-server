@@ -11,13 +11,13 @@
   ],
   "argocd": {
     "managerFilePatterns": [
-      "^(.*\\/)?kustomization\\.yaml$"
+      "/^(.*\\/)?kustomization\\.yaml$/"
     ]
   },
   "kubernetes": {
     "managerFilePatterns": [
-      "^.*deployment\\.yaml$",
-      "^.*cronjob\\.yaml$"
+      "/^.*deployment\\.yaml$/",
+      "/^.*cronjob\\.yaml$/"
     ]
   }
 }
