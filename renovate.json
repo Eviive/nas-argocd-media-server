@@ -10,5 +10,16 @@
       "/^.*deployment\\.yaml$/",
       "/^.*cronjob\\.yaml$/"
     ]
-  }
+  },
+  "packageRules": [
+    {
+      "matchPackageNames": [
+        "linuxserver/qbittorrent"
+      ],
+      "matchDatasources": [
+        "docker"
+      ],
+      "allowedVersions": "!/.*20\\.04\\.1.*/"
+    }
+  ]
 }
