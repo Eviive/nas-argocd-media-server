@@ -1,0 +1,23 @@
+{
+  "$schema": "https://docs.renovatebot.com/renovate-schema.json",
+  "extends": [
+    "config:recommended",
+    ":semanticCommits",
+    "mergeConfidence:all-badges"
+  ],
+  "enabledManagers": [
+    "argocd",
+    "kubernetes"
+  ],
+  "argocd": {
+    "managerFilePatterns": [
+      "^(.*\\/)?kustomization\\.yaml$"
+    ]
+  },
+  "kubernetes": {
+    "managerFilePatterns": [
+      "^.*deployment\\.yaml$",
+      "^.*cronjob\\.yaml$"
+    ]
+  }
+}
