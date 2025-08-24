@@ -1,6 +1,20 @@
 {
   "$schema": "https://docs.renovatebot.com/renovate-schema.json",
   "extends": [
-    "config:recommended"
-  ]
+    "config:recommended",
+    ":semanticCommits",
+    ":enableVulnerabilityAlertsWithLabel(security)",
+    "mergeConfidence:all-badges"
+  ],
+  "argocd": {
+    "managerFilePatterns": [
+      "^(.*\\/)?kustomization\\.yaml$"
+    ]
+  },
+  "kubernetes": {
+    "managerFilePatterns": [
+      "^.*deployment\\.yaml$",
+      "^.*cronjob\\.yaml$"
+    ]
+  }
 }
