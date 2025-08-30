@@ -3,7 +3,7 @@ kind: Kustomization
 namespace: prowlarr
 resources:
   - resources/ns.yaml
-  - resources/deployment.yaml
+  - resources/deploy.yaml
   - resources/config-pvc.yaml
   - resources/svc.yaml
   - resources/ingr.yaml

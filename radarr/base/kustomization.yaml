@@ -3,7 +3,7 @@ kind: Kustomization
 namespace: radarr
 resources:
   - resources/ns.yaml
-  - resources/deployment.yaml
+  - resources/deploy.yaml
   - resources/config-pvc.yaml
   - resources/movies-pvc.yaml
   - resources/downloads-pvc.yaml

@@ -3,7 +3,7 @@ kind: Kustomization
 namespace: scraparr
 resources:
   - resources/ns.yaml
-  - resources/deployment.yaml
+  - resources/deploy.yaml
   - resources/svc.yaml
   - resources/svc-monitor.yaml
 configMapGenerator:
