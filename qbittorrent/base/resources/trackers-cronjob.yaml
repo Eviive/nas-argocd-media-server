@@ -12,7 +12,7 @@ spec:
         spec:
           containers:
             - name: trackers
-              image: bash:5.3.3
+              image: bash:5.3.3@sha256:cc444a5a327f8e42318b2772b392f8dd1a9dcb9e00d3c847cc9e419eefa20419
               command:
                 - bash
               args:
