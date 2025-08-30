@@ -1,23 +1,16 @@
 {
   "$schema": "https://docs.renovatebot.com/renovate-schema.json",
   "extends": [
-    "config:recommended",
-    ":semanticCommits",
-    "mergeConfidence:all-badges"
+    "github>Eviive/renovate-config:base",
+    "github>Eviive/renovate-config//kubernetes/base"
   ],
-  "kubernetes": {
-    "managerFilePatterns": [
-      "/^.*deployment\\.yaml$/",
-      "/^.*cronjob\\.yaml$/"
-    ]
-  },
   "packageRules": [
     {
-      "matchPackageNames": [
-        "linuxserver/qbittorrent"
-      ],
       "matchDatasources": [
         "docker"
+      ],
+      "matchPackageNames": [
+        "linuxserver/qbittorrent"
       ],
       "allowedVersions": "!/.*(14\\.3\\.9|20\\.04\\.1).*/"
     }
