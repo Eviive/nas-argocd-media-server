@@ -20,6 +20,20 @@ spec:
               value: "1057"
             - name: PGID
               value: "1056"
+          ports:
+            - name: http
+              containerPort: 8989
+          livenessProbe:
+            httpGet:
+              path: /ping
+              port: http
+            initialDelaySeconds: 5
+          readinessProbe:
+            httpGet:
+              path: /ping
+              port: http
+            initialDelaySeconds: 2
+            periodSeconds: 2
           volumeMounts:
             - name: config
               mountPath: /config
@@ -27,9 +41,6 @@ spec:
               mountPath: /tv
             - name: downloads
               mountPath: /downloads
-          ports:
-            - name: http
-              containerPort: 8989
       volumes:
         - name: config
           persistentVolumeClaim:
