@@ -30,12 +30,14 @@ spec:
               path: /api/v2/app/version
               port: http
             initialDelaySeconds: 5
+            timeoutSeconds: 5
           readinessProbe:
             httpGet:
               path: /api/v2/app/version
               port: http
             initialDelaySeconds: 2
-            periodSeconds: 2
+            periodSeconds: 5
+            timeoutSeconds: 5
           resources:
             limits:
               memory: "2Gi"
