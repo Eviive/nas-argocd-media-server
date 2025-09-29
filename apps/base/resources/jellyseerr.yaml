@@ -1,0 +1,9 @@
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+metadata:
+  name: jellyseerr
+spec:
+  source:
+    path: jellyseerr/$OVERLAY
+  destination:
+    namespace: jellyseerr

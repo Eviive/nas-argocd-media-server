@@ -10,6 +10,7 @@ It uses ArgoCD's [App-of-Apps pattern](https://argo-cd.readthedocs.io/en/stable/
 | Name        | Provider |
 |-------------|----------|
 | Jellyfin    | Docker   |
+| Jellyseerr  | Docker   |
 | Sonarr      | Docker   |
 | Radarr      | Docker   |
 | Prowlarr    | Docker   |

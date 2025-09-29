@@ -4,6 +4,7 @@ namespace: argocd
 resources:
   - resources/overlay-cm.yaml
   - resources/jellyfin.yaml
+  - resources/jellyseerr.yaml
   - resources/sonarr.yaml
   - resources/radarr.yaml
   - resources/prowlarr.yaml
