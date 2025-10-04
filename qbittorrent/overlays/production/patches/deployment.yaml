@@ -26,3 +26,8 @@
   value:
     name: DOT
     value: "off"
+- op: add
+  path: /spec/template/spec/containers/1/env/-
+  value:
+    name: DNS_ADDRESS
+    value: 10.2.0.1
