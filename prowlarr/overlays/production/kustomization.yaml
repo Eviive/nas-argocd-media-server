@@ -11,3 +11,7 @@ patches:
     target:
       kind: Certificate
       name: prowlarr
+  - path: patches/deploy.yaml
+    target:
+      kind: Deployment
+      name: prowlarr

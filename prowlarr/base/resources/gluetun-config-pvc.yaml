@@ -3,7 +3,7 @@ kind: PersistentVolumeClaim
 metadata:
   name: gluetun-config
   annotations:
-    folder: media-server/qbittorrent-gluetun/config
+    folder: media-server/prowlarr-gluetun/config
 spec:
   accessModes:
     - ReadWriteOnce

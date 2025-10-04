@@ -5,6 +5,7 @@ resources:
   - resources/ns.yaml
   - resources/deploy.yaml
   - resources/config-pvc.yaml
+  - resources/gluetun-config-pvc.yaml
   - resources/svc.yaml
   - resources/ingr.yaml
   - resources/cert.yaml
