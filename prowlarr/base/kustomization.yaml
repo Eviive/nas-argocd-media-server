@@ -9,3 +9,9 @@ resources:
   - resources/svc.yaml
   - resources/ingr.yaml
   - resources/cert.yaml
+configMapGenerator:
+  - name: prowlarr-coredns-config
+    options:
+      disableNameSuffixHash: true
+    files:
+      - Corefile=assets/coredns/Corefile

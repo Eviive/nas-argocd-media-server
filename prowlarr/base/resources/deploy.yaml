@@ -13,6 +13,12 @@ spec:
         app: prowlarr
     spec:
       initContainers:
+        - name: coredns
+          image: coredns/coredns:1.12.4
+          restartPolicy: Always
+          volumeMounts:
+            - name: prowlarr-coredns-config
+              mountPath: /etc/coredns
         - name: gluetun
           image: qmcgaw/gluetun:v3.40.0@sha256:2b42bfa046757145a5155acece417b65b4443c8033fb88661a8e9dcf7fda5a00
           restartPolicy: Always
@@ -75,3 +81,6 @@ spec:
         - name: prowlarr-gluetun-config
           persistentVolumeClaim:
             claimName: prowlarr-gluetun-config
+        - name: prowlarr-coredns-config
+          configMap:
+            name: prowlarr-coredns-config

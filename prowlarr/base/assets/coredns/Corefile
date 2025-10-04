@@ -1,0 +1,5 @@
+. {
+    bind 127.0.0.2
+    forward cluster.local 10.96.0.10
+    forward . 10.2.0.1
+}
