@@ -1,4 +1,17 @@
 - op: add
+  path: /spec/template/spec/initContainers/0/env
+  value: []
+- op: add
+  path: /spec/template/spec/initContainers/0/env/-
+  value:
+    name: LOCAL_DNS
+    value: 10.96.0.10
+- op: add
+  path: /spec/template/spec/initContainers/0/env/-
+  value:
+    name: VPN_DNS
+    value: 10.2.0.1
+- op: add
   path: /spec/template/spec/initContainers/1/env
   value: []
 - op: add
