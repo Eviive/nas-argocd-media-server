@@ -1,4 +1,7 @@
 - op: add
+  path: /spec/template/spec/initContainers/0/env
+  value: []
+- op: add
   path: /spec/template/spec/initContainers/0/env/-
   value:
     name: VPN_SERVICE_PROVIDER
