@@ -1,23 +1,23 @@
 - op: add
-  path: /spec/template/spec/initContainers/0/env
+  path: /spec/template/spec/initContainers/1/env
   value: []
 - op: add
-  path: /spec/template/spec/initContainers/0/env/-
+  path: /spec/template/spec/initContainers/1/env/-
   value:
     name: VPN_SERVICE_PROVIDER
     value: protonvpn
 - op: add
-  path: /spec/template/spec/initContainers/0/env/-
+  path: /spec/template/spec/initContainers/1/env/-
   value:
     name: SERVER_COUNTRIES
     value: Iceland,Switzerland,Sweden
 - op: add
-  path: /spec/template/spec/initContainers/0/env/-
+  path: /spec/template/spec/initContainers/1/env/-
   value:
     name: VPN_TYPE
     value: wireguard
 - op: add
-  path: /spec/template/spec/initContainers/0/env/-
+  path: /spec/template/spec/initContainers/1/env/-
   value:
     name: WIREGUARD_PRIVATE_KEY
     valueFrom:
@@ -25,12 +25,12 @@
         name: prowlarr-gluetun-protonvpn
         key: wireguard-private-key
 - op: add
-  path: /spec/template/spec/initContainers/0/env/-
+  path: /spec/template/spec/initContainers/1/env/-
   value:
     name: DOT
     value: "off"
 - op: add
-  path: /spec/template/spec/initContainers/0/env/-
+  path: /spec/template/spec/initContainers/1/env/-
   value:
     name: DNS_ADDRESS
     value: 127.0.0.2
