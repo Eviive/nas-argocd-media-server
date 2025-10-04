@@ -28,7 +28,7 @@ spec:
               add:
                 - NET_ADMIN
           volumeMounts:
-            - name: gluetun-config
+            - name: prowlarr-gluetun-config
               mountPath: /gluetun
         - name: ping
           image: busybox
@@ -72,6 +72,6 @@ spec:
         - name: prowlarr-config
           persistentVolumeClaim:
             claimName: prowlarr-config
-        - name: gluetun-config
+        - name: prowlarr-gluetun-config
           persistentVolumeClaim:
-            claimName: gluetun-config
+            claimName: prowlarr-gluetun-config

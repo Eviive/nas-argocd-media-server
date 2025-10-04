@@ -1,7 +1,7 @@
 apiVersion: v1
 kind: PersistentVolumeClaim
 metadata:
-  name: gluetun-config
+  name: qbittorrent-gluetun-config
   annotations:
     folder: media-server/qbittorrent-gluetun/config
 spec:

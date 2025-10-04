@@ -37,7 +37,7 @@ spec:
               add:
                 - NET_ADMIN
           volumeMounts:
-            - name: gluetun-config
+            - name: qbittorrent-gluetun-config
               mountPath: /gluetun
         - name: ping
           image: busybox
@@ -91,6 +91,6 @@ spec:
         - name: downloads
           persistentVolumeClaim:
             claimName: qbittorrent-downloads
-        - name: gluetun-config
+        - name: qbittorrent-gluetun-config
           persistentVolumeClaim:
-            claimName: gluetun-config
+            claimName: qbittorrent-gluetun-config
