@@ -15,6 +15,9 @@ spec:
       initContainers:
         - name: coredns
           image: coredns/coredns:1.12.4
+          args:
+            - -conf
+            - /etc/coredns/Corefile
           restartPolicy: Always
           volumeMounts:
             - name: prowlarr-coredns-config

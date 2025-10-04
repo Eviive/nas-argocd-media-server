@@ -34,3 +34,8 @@
   value:
     name: DNS_ADDRESS
     value: 127.0.0.2
+- op: add
+  path: /spec/template/spec/initContainers/1/env/-
+  value:
+    name: FIREWALL_OUTBOUND_SUBNETS
+    value: 10.96.0.0/16
