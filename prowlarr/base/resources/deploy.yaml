@@ -14,7 +14,7 @@ spec:
     spec:
       initContainers:
         - name: coredns
-          image: coredns/coredns:1.12.4
+          image: coredns/coredns:1.12.4@sha256:986f04c2e15e147d00bdd51e8c51bcef3644b13ff806be7d2ff1b261d6dfbae1
           args:
             - -conf
             - /etc/coredns/Corefile
@@ -40,7 +40,7 @@ spec:
             - name: prowlarr-gluetun-config
               mountPath: /gluetun
         - name: ping
-          image: busybox
+          image: busybox@sha256:d82f458899c9696cb26a7c02d5568f81c8c8223f8661bb2a7988b269c8b9051e
           command:
             - /bin/sh
             - -c
