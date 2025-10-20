@@ -30,4 +30,4 @@ spec:
                     secretKeyRef:
                       name: qbittorrent
                       key: qbittorrent-password
-          restartPolicy: OnFailure
+          restartPolicy: Never
