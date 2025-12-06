@@ -18,7 +18,7 @@
   "editable": true,
   "fiscalYearStartMonth": 0,
   "graphTooltip": 0,
-  "id": 31,
+  "id": null,
   "links": [],
   "panels": [
     {
@@ -38,7 +38,7 @@
     {
       "datasource": {
         "type": "prometheus",
-        "uid": "${datasource}"
+        "uid": "${ds_prometheus}"
       },
       "fieldConfig": {
         "defaults": {
@@ -113,16 +113,16 @@
         "textMode": "auto",
         "wideLayout": true
       },
-      "pluginVersion": "12.1.1",
+      "pluginVersion": "12.3.0",
       "targets": [
         {
           "datasource": {
             "type": "prometheus",
-            "uid": "prometheus"
+            "uid": "${ds_prometheus}"
           },
           "disableTextWrap": false,
           "editorMode": "builder",
-          "expr": "scraparr_services_up{job=\"$job\", scraparr_services=\"seerr\", alias=\"$seerr\"}",
+          "expr": "scraparr_services_up{job=~\"$job\", scraparr_services=\"seerr\", alias=\"$seerr\"}",
           "fullMetaSearch": false,
           "includeNullMetadata": true,
           "legendFormat": "__auto",
@@ -137,7 +137,7 @@
     {
       "datasource": {
         "type": "prometheus",
-        "uid": "${datasource}"
+        "uid": "${ds_prometheus}"
       },
       "fieldConfig": {
         "defaults": {
@@ -199,16 +199,16 @@
         "textMode": "auto",
         "wideLayout": true
       },
-      "pluginVersion": "12.1.1",
+      "pluginVersion": "12.3.0",
       "targets": [
         {
           "datasource": {
             "type": "prometheus",
-            "uid": "prometheus"
+            "uid": "${ds_prometheus}"
           },
           "disableTextWrap": false,
           "editorMode": "code",
-          "expr": "jellyseerr_user_total{job=\"$job\", alias=\"$seerr\"} or overseerr_user_total{job=\"$job\", alias=\"$seerr\"}",
+          "expr": "jellyseerr_user_total{job=~\"$job\", alias=\"$seerr\"} or overseerr_user_total{job=~\"$job\", alias=\"$seerr\"}",
           "fullMetaSearch": false,
           "includeNullMetadata": true,
           "legendFormat": "__auto",
@@ -223,7 +223,7 @@
     {
       "datasource": {
         "type": "prometheus",
-        "uid": "${datasource}"
+        "uid": "${ds_prometheus}"
       },
       "fieldConfig": {
         "defaults": {
@@ -276,16 +276,16 @@
         "textMode": "auto",
         "wideLayout": true
       },
-      "pluginVersion": "12.1.1",
+      "pluginVersion": "12.3.0",
       "targets": [
         {
           "datasource": {
             "type": "prometheus",
-            "uid": "prometheus"
+            "uid": "${ds_prometheus}"
           },
           "disableTextWrap": false,
           "editorMode": "code",
-          "expr": "time() - (jellyseerr_last_scrape{job=\"$job\", alias=\"$seerr\"} or overseerr_last_scrape{job=\"$job\", alias=\"$seerr\"})",
+          "expr": "time() - (jellyseerr_last_scrape{job=~\"$job\", alias=\"$seerr\"} or overseerr_last_scrape{job=~\"$job\", alias=\"$seerr\"})",
           "fullMetaSearch": false,
           "includeNullMetadata": true,
           "legendFormat": "__auto",
@@ -300,7 +300,7 @@
     {
       "datasource": {
         "type": "prometheus",
-        "uid": "${datasource}"
+        "uid": "${ds_prometheus}"
       },
       "fieldConfig": {
         "defaults": {
@@ -363,15 +363,15 @@
         "textMode": "auto",
         "wideLayout": true
       },
-      "pluginVersion": "12.1.1",
+      "pluginVersion": "12.3.0",
       "targets": [
         {
           "datasource": {
             "type": "prometheus",
-            "uid": "prometheus"
+            "uid": "${ds_prometheus}"
           },
           "editorMode": "code",
-          "expr": "jellyseerr_issue_status{job=\"$job\", alias=\"$seerr\"} or overseerr_issue_status{job=\"$job\", alias=\"$seerr\"}",
+          "expr": "jellyseerr_issue_status{job=~\"$job\", alias=\"$seerr\"} or overseerr_issue_status{job=~\"$job\", alias=\"$seerr\"}",
           "hide": false,
           "instant": false,
           "legendFormat": "__auto",
@@ -385,7 +385,7 @@
     {
       "datasource": {
         "type": "prometheus",
-        "uid": "${datasource}"
+        "uid": "${ds_prometheus}"
       },
       "fieldConfig": {
         "defaults": {
@@ -447,15 +447,15 @@
         "textMode": "auto",
         "wideLayout": true
       },
-      "pluginVersion": "12.1.1",
+      "pluginVersion": "12.3.0",
       "targets": [
         {
           "datasource": {
             "type": "prometheus",
-            "uid": "prometheus"
+            "uid": "${ds_prometheus}"
           },
           "editorMode": "code",
-          "expr": "jellyseerr_issue_total{job=\"$job\", alias=\"$seerr\"} or overseerr_issue_total{job=\"$job\", alias=\"$seerr\"}",
+          "expr": "jellyseerr_issue_total{job=~\"$job\", alias=\"$seerr\"} or overseerr_issue_total{job=~\"$job\", alias=\"$seerr\"}",
           "hide": false,
           "instant": false,
           "legendFormat": "__auto",
@@ -469,7 +469,7 @@
     {
       "datasource": {
         "type": "prometheus",
-        "uid": "${datasource}"
+        "uid": "${ds_prometheus}"
       },
       "fieldConfig": {
         "defaults": {
@@ -532,15 +532,15 @@
         "textMode": "auto",
         "wideLayout": true
       },
-      "pluginVersion": "12.1.1",
+      "pluginVersion": "12.3.0",
       "targets": [
         {
           "datasource": {
             "type": "prometheus",
-            "uid": "prometheus"
+            "uid": "${ds_prometheus}"
           },
           "editorMode": "code",
-          "expr": "jellyseerr_request_status{job=\"$job\", alias=\"$seerr\"} or overseerr_request_status{job=\"$job\", alias=\"$seerr\"}",
+          "expr": "jellyseerr_request_status{job=~\"$job\", alias=\"$seerr\"} or overseerr_request_status{job=~\"$job\", alias=\"$seerr\"}",
           "hide": false,
           "instant": false,
           "legendFormat": "__auto",
@@ -554,7 +554,7 @@
     {
       "datasource": {
         "type": "prometheus",
-        "uid": "${datasource}"
+        "uid": "${ds_prometheus}"
       },
       "fieldConfig": {
         "defaults": {
@@ -668,16 +668,16 @@
         "textMode": "auto",
         "wideLayout": true
       },
-      "pluginVersion": "12.1.1",
+      "pluginVersion": "12.3.0",
       "targets": [
         {
           "datasource": {
             "type": "prometheus",
-            "uid": "prometheus"
+            "uid": "${ds_prometheus}"
           },
           "disableTextWrap": false,
           "editorMode": "code",
-          "expr": "jellyseerr_request_total{job=\"$job\", alias=\"$seerr\"} or overseerr_request_total{job=\"$job\", alias=\"$seerr\"}",
+          "expr": "jellyseerr_request_total{job=~\"$job\", alias=\"$seerr\"} or overseerr_request_total{job=~\"$job\", alias=\"$seerr\"}",
           "fullMetaSearch": false,
           "includeNullMetadata": true,
           "legendFormat": "__auto",
@@ -688,10 +688,10 @@
         {
           "datasource": {
             "type": "prometheus",
-            "uid": "${datasource}"
+            "uid": "${ds_prometheus}"
           },
           "editorMode": "code",
-          "expr": "jellyseerr_request_tv{job=\"$job\", alias=\"$seerr\"} or overseerr_request_tv{job=\"$job\", alias=\"$seerr\"}",
+          "expr": "jellyseerr_request_tv{job=~\"$job\", alias=\"$seerr\"} or overseerr_request_tv{job=~\"$job\", alias=\"$seerr\"}",
           "hide": false,
           "instant": false,
           "legendFormat": "__auto",
@@ -701,10 +701,10 @@
         {
           "datasource": {
             "type": "prometheus",
-            "uid": "prometheus"
+            "uid": "${ds_prometheus}"
           },
           "editorMode": "code",
-          "expr": "jellyseerr_request_movie{job=\"$job\", alias=\"$seerr\"} or overseerr_request_movie{job=\"$job\", alias=\"$seerr\"}",
+          "expr": "jellyseerr_request_movie{job=~\"$job\", alias=\"$seerr\"} or overseerr_request_movie{job=~\"$job\", alias=\"$seerr\"}",
           "hide": false,
           "instant": false,
           "legendFormat": "__auto",
@@ -714,10 +714,10 @@
         {
           "datasource": {
             "type": "prometheus",
-            "uid": "${datasource}"
+            "uid": "${ds_prometheus}"
           },
           "editorMode": "code",
-          "expr": "jellyseerr_request_seasons_total{job=\"$job\", alias=\"$seerr\"} or overseerr_request_seasons_total{job=\"$job\", alias=\"$seerr\"}",
+          "expr": "jellyseerr_request_seasons_total{job=~\"$job\", alias=\"$seerr\"} or overseerr_request_seasons_total{job=~\"$job\", alias=\"$seerr\"}",
           "hide": false,
           "instant": false,
           "legendFormat": "__auto",
@@ -731,7 +731,7 @@
     {
       "datasource": {
         "type": "prometheus",
-        "uid": "prometheus"
+        "uid": "${ds_prometheus}"
       },
       "fieldConfig": {
         "defaults": {
@@ -803,12 +803,12 @@
         "text": {},
         "valueMode": "color"
       },
-      "pluginVersion": "12.1.1",
+      "pluginVersion": "12.3.0",
       "targets": [
         {
           "datasource": {
             "type": "prometheus",
-            "uid": "${datasource}"
+            "uid": "${ds_prometheus}"
           },
           "disableTextWrap": false,
           "editorMode": "code",
@@ -827,7 +827,7 @@
     {
       "datasource": {
         "type": "prometheus",
-        "uid": "prometheus"
+        "uid": "${ds_prometheus}"
       },
       "fieldConfig": {
         "defaults": {
@@ -899,12 +899,12 @@
         "text": {},
         "valueMode": "color"
       },
-      "pluginVersion": "12.1.1",
+      "pluginVersion": "12.3.0",
       "targets": [
         {
           "datasource": {
             "type": "prometheus",
-            "uid": "${datasource}"
+            "uid": "${ds_prometheus}"
           },
           "disableTextWrap": false,
           "editorMode": "code",
@@ -923,7 +923,7 @@
     {
       "datasource": {
         "type": "prometheus",
-        "uid": "prometheus"
+        "uid": "${ds_prometheus}"
       },
       "fieldConfig": {
         "defaults": {
@@ -995,12 +995,12 @@
         "text": {},
         "valueMode": "color"
       },
-      "pluginVersion": "12.1.1",
+      "pluginVersion": "12.3.0",
       "targets": [
         {
           "datasource": {
             "type": "prometheus",
-            "uid": "${datasource}"
+            "uid": "${ds_prometheus}"
           },
           "disableTextWrap": false,
           "editorMode": "code",
@@ -1033,7 +1033,7 @@
     {
       "datasource": {
         "type": "prometheus",
-        "uid": "${datasource}"
+        "uid": "${ds_prometheus}"
       },
       "fieldConfig": {
         "defaults": {
@@ -1108,16 +1108,16 @@
         "textMode": "auto",
         "wideLayout": true
       },
-      "pluginVersion": "12.1.1",
+      "pluginVersion": "12.3.0",
       "targets": [
         {
           "datasource": {
             "type": "prometheus",
-            "uid": "prometheus"
+            "uid": "${ds_prometheus}"
           },
           "disableTextWrap": false,
           "editorMode": "code",
-          "expr": "scraparr_services_up{job=\"$job\", scraparr_services=\"sonarr\", alias=\"$sonarr\"}",
+          "expr": "scraparr_services_up{job=~\"$job\", scraparr_services=\"sonarr\", alias=\"$sonarr\"}",
           "fullMetaSearch": false,
           "includeNullMetadata": true,
           "legendFormat": "__auto",
@@ -1132,7 +1132,7 @@
     {
       "datasource": {
         "type": "prometheus",
-        "uid": "${datasource}"
+        "uid": "${ds_prometheus}"
       },
       "fieldConfig": {
         "defaults": {
@@ -1178,16 +1178,16 @@
         "textMode": "auto",
         "wideLayout": true
       },
-      "pluginVersion": "12.1.1",
+      "pluginVersion": "12.3.0",
       "targets": [
         {
           "datasource": {
             "type": "prometheus",
-            "uid": "prometheus"
+            "uid": "${ds_prometheus}"
           },
           "disableTextWrap": false,
           "editorMode": "code",
-          "expr": "sonarr_build_time{job=\"$job\", alias=\"$sonarr\"} * 1000",
+          "expr": "sonarr_build_time{job=~\"$job\", alias=\"$sonarr\"} * 1000",
           "fullMetaSearch": false,
           "includeNullMetadata": true,
           "legendFormat": "__auto",
@@ -1202,7 +1202,7 @@
     {
       "datasource": {
         "type": "prometheus",
-        "uid": "${datasource}"
+        "uid": "${ds_prometheus}"
       },
       "fieldConfig": {
         "defaults": {
@@ -1255,16 +1255,16 @@
         "textMode": "auto",
         "wideLayout": true
       },
-      "pluginVersion": "12.1.1",
+      "pluginVersion": "12.3.0",
       "targets": [
         {
           "datasource": {
             "type": "prometheus",
-            "uid": "prometheus"
+            "uid": "${ds_prometheus}"
           },
           "disableTextWrap": false,
           "editorMode": "code",
-          "expr": "time() - sonarr_last_scrape{job=\"$job\", alias=\"$sonarr\"}",
+          "expr": "time() - sonarr_last_scrape{job=~\"$job\", alias=\"$sonarr\"}",
           "fullMetaSearch": false,
           "includeNullMetadata": true,
           "legendFormat": "__auto",
@@ -1279,7 +1279,7 @@
     {
       "datasource": {
         "type": "prometheus",
-        "uid": "${datasource}"
+        "uid": "${ds_prometheus}"
       },
       "fieldConfig": {
         "defaults": {
@@ -1324,12 +1324,12 @@
         "textMode": "auto",
         "wideLayout": true
       },
-      "pluginVersion": "12.1.1",
+      "pluginVersion": "12.3.0",
       "targets": [
         {
           "datasource": {
             "type": "prometheus",
-            "uid": "prometheus"
+            "uid": "${ds_prometheus}"
           },
           "disableTextWrap": false,
           "editorMode": "code",
@@ -1348,7 +1348,7 @@
     {
       "datasource": {
         "type": "prometheus",
-        "uid": "${datasource}"
+        "uid": "${ds_prometheus}"
       },
       "fieldConfig": {
         "defaults": {
@@ -1410,12 +1410,12 @@
         "textMode": "value",
         "wideLayout": true
       },
-      "pluginVersion": "12.1.1",
+      "pluginVersion": "12.3.0",
       "targets": [
         {
           "datasource": {
             "type": "prometheus",
-            "uid": "prometheus"
+            "uid": "${ds_prometheus}"
           },
           "disableTextWrap": false,
           "editorMode": "code",
@@ -1432,7 +1432,7 @@
         {
           "datasource": {
             "type": "prometheus",
-            "uid": "${datasource}"
+            "uid": "${ds_prometheus}"
           },
           "disableTextWrap": false,
           "editorMode": "code",
@@ -1453,7 +1453,7 @@
     {
       "datasource": {
         "type": "prometheus",
-        "uid": "prometheus"
+        "uid": "${ds_prometheus}"
       },
       "fieldConfig": {
         "defaults": {
@@ -1498,12 +1498,12 @@
         "textMode": "value",
         "wideLayout": true
       },
-      "pluginVersion": "12.1.1",
+      "pluginVersion": "12.3.0",
       "targets": [
         {
           "datasource": {
             "type": "prometheus",
-            "uid": "${datasource}"
+            "uid": "${ds_prometheus}"
           },
           "disableTextWrap": false,
           "editorMode": "code",
@@ -1520,7 +1520,7 @@
         {
           "datasource": {
             "type": "prometheus",
-            "uid": "prometheus"
+            "uid": "${ds_prometheus}"
           },
           "disableTextWrap": false,
           "editorMode": "code",
@@ -1537,7 +1537,7 @@
         {
           "datasource": {
             "type": "prometheus",
-            "uid": "${datasource}"
+            "uid": "${ds_prometheus}"
           },
           "disableTextWrap": false,
           "editorMode": "code",
@@ -1554,7 +1554,7 @@
         {
           "datasource": {
             "type": "prometheus",
-            "uid": "prometheus"
+            "uid": "${ds_prometheus}"
           },
           "editorMode": "code",
           "expr": "sonarr_continuing_series{job=~\"$job\", path=\"total\", alias=\"$sonarr\"}",
@@ -1571,7 +1571,7 @@
     {
       "datasource": {
         "type": "prometheus",
-        "uid": "${datasource}"
+        "uid": "${ds_prometheus}"
       },
       "fieldConfig": {
         "defaults": {
@@ -1630,16 +1630,16 @@
         "textMode": "auto",
         "wideLayout": true
       },
-      "pluginVersion": "12.1.1",
+      "pluginVersion": "12.3.0",
       "targets": [
         {
           "datasource": {
             "type": "prometheus",
-            "uid": "prometheus"
+            "uid": "${ds_prometheus}"
           },
           "disableTextWrap": false,
           "editorMode": "code",
-          "expr": "sonarr_disk_size{job=\"$job\", alias=\"$sonarr\"}",
+          "expr": "sonarr_disk_size{job=~\"$job\", alias=\"$sonarr\"}",
           "fullMetaSearch": false,
           "hide": false,
           "includeNullMetadata": true,
@@ -1652,10 +1652,10 @@
         {
           "datasource": {
             "type": "prometheus",
-            "uid": "${datasource}"
+            "uid": "${ds_prometheus}"
           },
           "editorMode": "code",
-          "expr": "sonarr_disk_size_total{job=\"$job\", alias=\"$sonarr\"}",
+          "expr": "sonarr_disk_size_total{job=~\"$job\", alias=\"$sonarr\"}",
           "hide": false,
           "instant": false,
           "legendFormat": "__auto",
@@ -1669,7 +1669,7 @@
     {
       "datasource": {
         "type": "prometheus",
-        "uid": "prometheus"
+        "uid": "${ds_prometheus}"
       },
       "fieldConfig": {
         "defaults": {
@@ -1716,16 +1716,16 @@
         "textMode": "auto",
         "wideLayout": true
       },
-      "pluginVersion": "12.1.1",
+      "pluginVersion": "12.3.0",
       "targets": [
         {
           "datasource": {
             "type": "prometheus",
-            "uid": "${datasource}"
+            "uid": "${ds_prometheus}"
           },
           "disableTextWrap": false,
           "editorMode": "code",
-          "expr": "sonarr_free_disk_size{job=\"$job\", alias=\"$sonarr\"}",
+          "expr": "sonarr_free_disk_size{job=~\"$job\", alias=\"$sonarr\"}",
           "fullMetaSearch": false,
           "includeNullMetadata": true,
           "legendFormat": "__auto",
@@ -1740,7 +1740,7 @@
     {
       "datasource": {
         "type": "prometheus",
-        "uid": "prometheus"
+        "uid": "${ds_prometheus}"
       },
       "fieldConfig": {
         "defaults": {
@@ -1812,20 +1812,21 @@
         "text": {},
         "valueMode": "color"
       },
-      "pluginVersion": "12.1.1",
+      "pluginVersion": "12.3.0",
       "targets": [
         {
           "datasource": {
             "type": "prometheus",
-            "uid": "${datasource}"
+            "uid": "${ds_prometheus}"
           },
           "disableTextWrap": false,
           "editorMode": "code",
-          "expr": "sonarr_quality_episodes_total{job=~\"$job\", alias=\"$sonarr\"}",
+          "expr": "sort_desc(sonarr_quality_episodes_total{job=~\"$job\", alias=\"$sonarr\"})",
           "fullMetaSearch": false,
           "includeNullMetadata": true,
+          "instant": true,
           "legendFormat": "__auto",
-          "range": true,
+          "range": false,
           "refId": "A",
           "useBackend": false
         }
@@ -1836,7 +1837,7 @@
     {
       "datasource": {
         "type": "prometheus",
-        "uid": "prometheus"
+        "uid": "${ds_prometheus}"
       },
       "fieldConfig": {
         "defaults": {
@@ -1908,20 +1909,21 @@
         "text": {},
         "valueMode": "color"
       },
-      "pluginVersion": "12.1.1",
+      "pluginVersion": "12.3.0",
       "targets": [
         {
           "datasource": {
             "type": "prometheus",
-            "uid": "${datasource}"
+            "uid": "${ds_prometheus}"
           },
           "disableTextWrap": false,
           "editorMode": "code",
-          "expr": "sonarr_genres_count_total{job=~\"$job\", alias=\"$sonarr\"}",
+          "expr": "sort_desc(sonarr_genres_count_total{job=~\"$job\", alias=\"$sonarr\"})",
           "fullMetaSearch": false,
           "includeNullMetadata": true,
+          "instant": true,
           "legendFormat": "__auto",
-          "range": true,
+          "range": false,
           "refId": "A",
           "useBackend": false
         }
@@ -1946,7 +1948,7 @@
     {
       "datasource": {
         "type": "prometheus",
-        "uid": "prometheus"
+        "uid": "${ds_prometheus}"
       },
       "fieldConfig": {
         "defaults": {
@@ -2021,16 +2023,16 @@
         "textMode": "auto",
         "wideLayout": true
       },
-      "pluginVersion": "12.1.1",
+      "pluginVersion": "12.3.0",
       "targets": [
         {
           "datasource": {
             "type": "prometheus",
-            "uid": "${datasource}"
+            "uid": "${ds_prometheus}"
           },
           "disableTextWrap": false,
           "editorMode": "code",
-          "expr": "scraparr_services_up{job=\"$job\", scraparr_services=\"radarr\", alias=\"$radarr\"}",
+          "expr": "scraparr_services_up{job=~\"$job\", scraparr_services=\"radarr\", alias=\"$radarr\"}",
           "fullMetaSearch": false,
           "includeNullMetadata": true,
           "legendFormat": "__auto",
@@ -2045,7 +2047,7 @@
     {
       "datasource": {
         "type": "prometheus",
-        "uid": "prometheus"
+        "uid": "${ds_prometheus}"
       },
       "fieldConfig": {
         "defaults": {
@@ -2091,16 +2093,16 @@
         "textMode": "auto",
         "wideLayout": true
       },
-      "pluginVersion": "12.1.1",
+      "pluginVersion": "12.3.0",
       "targets": [
         {
           "datasource": {
             "type": "prometheus",
-            "uid": "${datasource}"
+            "uid": "${ds_prometheus}"
           },
           "disableTextWrap": false,
           "editorMode": "code",
-          "expr": "radarr_build_time{job=\"$job\", alias=\"$radarr\"} * 1000",
+          "expr": "radarr_build_time{job=~\"$job\", alias=\"$radarr\"} * 1000",
           "fullMetaSearch": false,
           "includeNullMetadata": true,
           "legendFormat": "__auto",
@@ -2115,7 +2117,7 @@
     {
       "datasource": {
         "type": "prometheus",
-        "uid": "prometheus"
+        "uid": "${ds_prometheus}"
       },
       "fieldConfig": {
         "defaults": {
@@ -2168,16 +2170,16 @@
         "textMode": "auto",
         "wideLayout": true
       },
-      "pluginVersion": "12.1.1",
+      "pluginVersion": "12.3.0",
       "targets": [
         {
           "datasource": {
             "type": "prometheus",
-            "uid": "${datasource}"
+            "uid": "${ds_prometheus}"
           },
           "disableTextWrap": false,
           "editorMode": "code",
-          "expr": "time() - radarr_last_scrape{job=\"$job\", alias=\"$radarr\"}",
+          "expr": "time() - radarr_last_scrape{job=~\"$job\", alias=\"$radarr\"}",
           "fullMetaSearch": false,
           "includeNullMetadata": true,
           "legendFormat": "__auto",
@@ -2192,7 +2194,7 @@
     {
       "datasource": {
         "type": "prometheus",
-        "uid": "prometheus"
+        "uid": "${ds_prometheus}"
       },
       "fieldConfig": {
         "defaults": {
@@ -2237,12 +2239,12 @@
         "textMode": "auto",
         "wideLayout": true
       },
-      "pluginVersion": "12.1.1",
+      "pluginVersion": "12.3.0",
       "targets": [
         {
           "datasource": {
             "type": "prometheus",
-            "uid": "${datasource}"
+            "uid": "${ds_prometheus}"
           },
           "disableTextWrap": false,
           "editorMode": "code",
@@ -2261,7 +2263,7 @@
     {
       "datasource": {
         "type": "prometheus",
-        "uid": "prometheus"
+        "uid": "${ds_prometheus}"
       },
       "fieldConfig": {
         "defaults": {
@@ -2323,12 +2325,12 @@
         "textMode": "value",
         "wideLayout": true
       },
-      "pluginVersion": "12.1.1",
+      "pluginVersion": "12.3.0",
       "targets": [
         {
           "datasource": {
             "type": "prometheus",
-            "uid": "${datasource}"
+            "uid": "${ds_prometheus}"
           },
           "disableTextWrap": false,
           "editorMode": "code",
@@ -2345,7 +2347,7 @@
         {
           "datasource": {
             "type": "prometheus",
-            "uid": "prometheus"
+            "uid": "${ds_prometheus}"
           },
           "disableTextWrap": false,
           "editorMode": "code",
@@ -2362,7 +2364,7 @@
         {
           "datasource": {
             "type": "prometheus",
-            "uid": "${datasource}"
+            "uid": "${ds_prometheus}"
           },
           "disableTextWrap": false,
           "editorMode": "code",
@@ -2379,7 +2381,7 @@
         {
           "datasource": {
             "type": "prometheus",
-            "uid": "prometheus"
+            "uid": "${ds_prometheus}"
           },
           "disableTextWrap": false,
           "editorMode": "code",
@@ -2398,7 +2400,7 @@
     {
       "datasource": {
         "type": "prometheus",
-        "uid": "${datasource}"
+        "uid": "${ds_prometheus}"
       },
       "fieldConfig": {
         "defaults": {
@@ -2457,16 +2459,16 @@
         "textMode": "auto",
         "wideLayout": true
       },
-      "pluginVersion": "12.1.1",
+      "pluginVersion": "12.3.0",
       "targets": [
         {
           "datasource": {
             "type": "prometheus",
-            "uid": "prometheus"
+            "uid": "${ds_prometheus}"
           },
           "disableTextWrap": false,
           "editorMode": "code",
-          "expr": "radarr_disk_size{job=\"$job\", alias=\"$radarr\"}",
+          "expr": "radarr_disk_size{job=~\"$job\", alias=\"$radarr\"}",
           "fullMetaSearch": false,
           "hide": false,
           "includeNullMetadata": true,
@@ -2479,10 +2481,10 @@
         {
           "datasource": {
             "type": "prometheus",
-            "uid": "${datasource}"
+            "uid": "${ds_prometheus}"
           },
           "editorMode": "code",
-          "expr": "radarr_disk_size_total{job=\"$job\", alias=\"$radarr\"}",
+          "expr": "radarr_disk_size_total{job=~\"$job\", alias=\"$radarr\"}",
           "hide": false,
           "instant": false,
           "legendFormat": "__auto",
@@ -2496,7 +2498,7 @@
     {
       "datasource": {
         "type": "prometheus",
-        "uid": "prometheus"
+        "uid": "${ds_prometheus}"
       },
       "fieldConfig": {
         "defaults": {
@@ -2542,16 +2544,16 @@
         "textMode": "auto",
         "wideLayout": true
       },
-      "pluginVersion": "12.1.1",
+      "pluginVersion": "12.3.0",
       "targets": [
         {
           "datasource": {
             "type": "prometheus",
-            "uid": "${datasource}"
+            "uid": "${ds_prometheus}"
           },
           "disableTextWrap": false,
           "editorMode": "code",
-          "expr": "radarr_free_disk_size{job=\"$job\", alias=\"$radarr\"}",
+          "expr": "radarr_free_disk_size{job=~\"$job\", alias=\"$radarr\"}",
           "fullMetaSearch": false,
           "includeNullMetadata": true,
           "legendFormat": "__auto",
@@ -2566,7 +2568,7 @@
     {
       "datasource": {
         "type": "prometheus",
-        "uid": "prometheus"
+        "uid": "${ds_prometheus}"
       },
       "fieldConfig": {
         "defaults": {
@@ -2638,20 +2640,21 @@
         "text": {},
         "valueMode": "color"
       },
-      "pluginVersion": "12.1.1",
+      "pluginVersion": "12.3.0",
       "targets": [
         {
           "datasource": {
             "type": "prometheus",
-            "uid": "${datasource}"
+            "uid": "${ds_prometheus}"
           },
           "disableTextWrap": false,
           "editorMode": "code",
-          "expr": "radarr_quality_movies_total{job=~\"$job\", alias=\"$radarr\"}",
+          "expr": "sort_desc(radarr_quality_movies_total{job=~\"$job\", alias=\"$radarr\"})",
           "fullMetaSearch": false,
           "includeNullMetadata": true,
+          "instant": true,
           "legendFormat": "__auto",
-          "range": true,
+          "range": false,
           "refId": "A",
           "useBackend": false
         }
@@ -2662,7 +2665,7 @@
     {
       "datasource": {
         "type": "prometheus",
-        "uid": "prometheus"
+        "uid": "${ds_prometheus}"
       },
       "fieldConfig": {
         "defaults": {
@@ -2734,20 +2737,21 @@
         "text": {},
         "valueMode": "color"
       },
-      "pluginVersion": "12.1.1",
+      "pluginVersion": "12.3.0",
       "targets": [
         {
           "datasource": {
             "type": "prometheus",
-            "uid": "${datasource}"
+            "uid": "${ds_prometheus}"
           },
           "disableTextWrap": false,
           "editorMode": "code",
-          "expr": "radarr_genres_count_total{job=~\"$job\", alias=\"$radarr\"}",
+          "expr": "sort_desc(radarr_genres_count_total{job=~\"$job\", alias=\"$radarr\"})",
           "fullMetaSearch": false,
           "includeNullMetadata": true,
+          "instant": true,
           "legendFormat": "__auto",
-          "range": true,
+          "range": false,
           "refId": "A",
           "useBackend": false
         }
@@ -2772,7 +2776,7 @@
     {
       "datasource": {
         "type": "prometheus",
-        "uid": "${datasource}"
+        "uid": "${ds_prometheus}"
       },
       "fieldConfig": {
         "defaults": {
@@ -2847,16 +2851,16 @@
         "textMode": "auto",
         "wideLayout": true
       },
-      "pluginVersion": "12.1.1",
+      "pluginVersion": "12.3.0",
       "targets": [
         {
           "datasource": {
             "type": "prometheus",
-            "uid": "prometheus"
+            "uid": "${ds_prometheus}"
           },
           "disableTextWrap": false,
           "editorMode": "builder",
-          "expr": "scraparr_services_up{job=\"$job\", scraparr_services=\"prowlarr\", alias=\"$prowlarr\"}",
+          "expr": "scraparr_services_up{job=~\"$job\", scraparr_services=\"prowlarr\", alias=\"$prowlarr\"}",
           "fullMetaSearch": false,
           "includeNullMetadata": true,
           "legendFormat": "__auto",
@@ -2871,7 +2875,7 @@
     {
       "datasource": {
         "type": "prometheus",
-        "uid": "${datasource}"
+        "uid": "${ds_prometheus}"
       },
       "fieldConfig": {
         "defaults": {
@@ -2917,16 +2921,16 @@
         "textMode": "auto",
         "wideLayout": true
       },
-      "pluginVersion": "12.1.1",
+      "pluginVersion": "12.3.0",
       "targets": [
         {
           "datasource": {
             "type": "prometheus",
-            "uid": "prometheus"
+            "uid": "${ds_prometheus}"
           },
           "disableTextWrap": false,
           "editorMode": "code",
-          "expr": "prowlarr_build_time{job=\"$job\", alias=\"$prowlarr\"} * 1000",
+          "expr": "prowlarr_build_time{job=~\"$job\", alias=\"$prowlarr\"} * 1000",
           "fullMetaSearch": false,
           "includeNullMetadata": true,
           "legendFormat": "__auto",
@@ -2941,7 +2945,7 @@
     {
       "datasource": {
         "type": "prometheus",
-        "uid": "${datasource}"
+        "uid": "${ds_prometheus}"
       },
       "fieldConfig": {
         "defaults": {
@@ -2994,16 +2998,16 @@
         "textMode": "auto",
         "wideLayout": true
       },
-      "pluginVersion": "12.1.1",
+      "pluginVersion": "12.3.0",
       "targets": [
         {
           "datasource": {
             "type": "prometheus",
-            "uid": "prometheus"
+            "uid": "${ds_prometheus}"
           },
           "disableTextWrap": false,
           "editorMode": "code",
-          "expr": "time() - prowlarr_last_scrape{job=\"$job\", alias=\"$prowlarr\"}",
+          "expr": "time() - prowlarr_last_scrape{job=~\"$job\", alias=\"$prowlarr\"}",
           "fullMetaSearch": false,
           "includeNullMetadata": true,
           "legendFormat": "__auto",
@@ -3018,7 +3022,7 @@
     {
       "datasource": {
         "type": "prometheus",
-        "uid": "${datasource}"
+        "uid": "${ds_prometheus}"
       },
       "fieldConfig": {
         "defaults": {
@@ -3063,12 +3067,12 @@
         "textMode": "auto",
         "wideLayout": true
       },
-      "pluginVersion": "12.1.1",
+      "pluginVersion": "12.3.0",
       "targets": [
         {
           "datasource": {
             "type": "prometheus",
-            "uid": "prometheus"
+            "uid": "${ds_prometheus}"
           },
           "disableTextWrap": false,
           "editorMode": "code",
@@ -3087,7 +3091,7 @@
     {
       "datasource": {
         "type": "prometheus",
-        "uid": "${datasource}"
+        "uid": "${ds_prometheus}"
       },
       "fieldConfig": {
         "defaults": {
@@ -3131,16 +3135,16 @@
         "textMode": "auto",
         "wideLayout": true
       },
-      "pluginVersion": "12.1.1",
+      "pluginVersion": "12.3.0",
       "targets": [
         {
           "datasource": {
             "type": "prometheus",
-            "uid": "prometheus"
+            "uid": "${ds_prometheus}"
           },
           "disableTextWrap": false,
           "editorMode": "code",
-          "expr": "prowlarr_applications_total{job=\"$job\", alias=\"$prowlarr\"}",
+          "expr": "prowlarr_applications_total{job=~\"$job\", alias=\"$prowlarr\"}",
           "fullMetaSearch": false,
           "includeNullMetadata": true,
           "legendFormat": "__auto",
@@ -3155,7 +3159,7 @@
     {
       "datasource": {
         "type": "prometheus",
-        "uid": "${datasource}"
+        "uid": "${ds_prometheus}"
       },
       "fieldConfig": {
         "defaults": {
@@ -3203,16 +3207,16 @@
         "textMode": "auto",
         "wideLayout": true
       },
-      "pluginVersion": "12.1.1",
+      "pluginVersion": "12.3.0",
       "targets": [
         {
           "datasource": {
             "type": "prometheus",
-            "uid": "prometheus"
+            "uid": "${ds_prometheus}"
           },
           "disableTextWrap": false,
           "editorMode": "code",
-          "expr": "prowlarr_application_enabled_total{job=\"$job\", alias=\"$prowlarr\"}",
+          "expr": "prowlarr_application_enabled_total{job=~\"$job\", alias=\"$prowlarr\"}",
           "fullMetaSearch": false,
           "includeNullMetadata": true,
           "legendFormat": "__auto",
@@ -3227,13 +3231,14 @@
     {
       "datasource": {
         "type": "prometheus",
-        "uid": "${datasource}"
+        "uid": "${ds_prometheus}"
       },
       "fieldConfig": {
         "defaults": {
           "color": {
             "mode": "thresholds"
           },
+          "displayName": "${__field.labels.sync_level}:",
           "mappings": [],
           "thresholds": {
             "mode": "absolute",
@@ -3261,7 +3266,7 @@
       "options": {
         "colorMode": "value",
         "graphMode": "none",
-        "justifyMode": "auto",
+        "justifyMode": "center",
         "orientation": "auto",
         "percentChangeColorMode": "standard",
         "reduceOptions": {
@@ -3275,16 +3280,16 @@
         "textMode": "auto",
         "wideLayout": true
       },
-      "pluginVersion": "12.1.1",
+      "pluginVersion": "12.3.0",
       "targets": [
         {
           "datasource": {
             "type": "prometheus",
-            "uid": "prometheus"
+            "uid": "${ds_prometheus}"
           },
           "disableTextWrap": false,
           "editorMode": "builder",
-          "expr": "prowlarr_application_sync_level_total{job=\"scraparr\", alias=\"$prowlarr\"}",
+          "expr": "prowlarr_application_sync_level_total{job=~\"$job\", alias=\"$prowlarr\"}",
           "fullMetaSearch": false,
           "includeNullMetadata": true,
           "legendFormat": "__auto",
@@ -3299,7 +3304,7 @@
     {
       "datasource": {
         "type": "prometheus",
-        "uid": "${datasource}"
+        "uid": "${ds_prometheus}"
       },
       "fieldConfig": {
         "defaults": {
@@ -3348,16 +3353,16 @@
         "textMode": "auto",
         "wideLayout": true
       },
-      "pluginVersion": "12.1.1",
+      "pluginVersion": "12.3.0",
       "targets": [
         {
           "datasource": {
             "type": "prometheus",
-            "uid": "prometheus"
+            "uid": "${ds_prometheus}"
           },
           "disableTextWrap": false,
           "editorMode": "code",
-          "expr": "prowlarr_indexer_count{job=\"$job\", alias=\"$prowlarr\"}",
+          "expr": "prowlarr_indexer_count{job=~\"$job\", alias=\"$prowlarr\"}",
           "fullMetaSearch": false,
           "includeNullMetadata": true,
           "legendFormat": "__auto",
@@ -3372,7 +3377,7 @@
     {
       "datasource": {
         "type": "prometheus",
-        "uid": "${datasource}"
+        "uid": "${ds_prometheus}"
       },
       "fieldConfig": {
         "defaults": {
@@ -3425,16 +3430,16 @@
         "textMode": "auto",
         "wideLayout": true
       },
-      "pluginVersion": "12.1.1",
+      "pluginVersion": "12.3.0",
       "targets": [
         {
           "datasource": {
             "type": "prometheus",
-            "uid": "prometheus"
+            "uid": "${ds_prometheus}"
           },
           "disableTextWrap": false,
           "editorMode": "code",
-          "expr": "prowlarr_indexer_enabled{job=\"$job\", indexer=\"total\", alias=\"$prowlarr\"}",
+          "expr": "prowlarr_indexer_enabled{job=~\"$job\", indexer=\"total\", alias=\"$prowlarr\"}",
           "fullMetaSearch": false,
           "hide": false,
           "includeNullMetadata": true,
@@ -3451,7 +3456,7 @@
     {
       "datasource": {
         "type": "prometheus",
-        "uid": "${datasource}"
+        "uid": "${ds_prometheus}"
       },
       "fieldConfig": {
         "defaults": {
@@ -3504,16 +3509,16 @@
         "textMode": "auto",
         "wideLayout": true
       },
-      "pluginVersion": "12.1.1",
+      "pluginVersion": "12.3.0",
       "targets": [
         {
           "datasource": {
             "type": "prometheus",
-            "uid": "prometheus"
+            "uid": "${ds_prometheus}"
           },
           "disableTextWrap": false,
           "editorMode": "code",
-          "expr": "prowlarr_indexer_privacy{job=\"$job\", alias=\"$prowlarr\"}",
+          "expr": "prowlarr_indexer_privacy{job=~\"$job\", alias=\"$prowlarr\"}",
           "fullMetaSearch": false,
           "hide": false,
           "includeNullMetadata": true,
@@ -3530,7 +3535,7 @@
     {
       "datasource": {
         "type": "prometheus",
-        "uid": "${datasource}"
+        "uid": "${ds_prometheus}"
       },
       "fieldConfig": {
         "defaults": {
@@ -3584,16 +3589,16 @@
         "textMode": "auto",
         "wideLayout": true
       },
-      "pluginVersion": "12.1.1",
+      "pluginVersion": "12.3.0",
       "targets": [
         {
           "datasource": {
             "type": "prometheus",
-            "uid": "prometheus"
+            "uid": "${ds_prometheus}"
           },
           "disableTextWrap": false,
           "editorMode": "code",
-          "expr": "prowlarr_vip_expiration{job=\"$job\", alias=\"$prowlarr\"} - time()",
+          "expr": "prowlarr_vip_expiration{job=~\"$job\", alias=\"$prowlarr\"} - time()",
           "fullMetaSearch": false,
           "hide": false,
           "includeNullMetadata": true,
@@ -3624,7 +3629,7 @@
     {
       "datasource": {
         "type": "prometheus",
-        "uid": "${datasource}"
+        "uid": "${ds_prometheus}"
       },
       "fieldConfig": {
         "defaults": {
@@ -3699,16 +3704,16 @@
         "textMode": "auto",
         "wideLayout": true
       },
-      "pluginVersion": "12.1.1",
+      "pluginVersion": "12.3.0",
       "targets": [
         {
           "datasource": {
             "type": "prometheus",
-            "uid": "prometheus"
+            "uid": "${ds_prometheus}"
           },
           "disableTextWrap": false,
           "editorMode": "builder",
-          "expr": "scraparr_services_up{job=\"$job\", scraparr_services=\"bazarr\", alias=\"$bazarr\"}",
+          "expr": "scraparr_services_up{job=~\"$job\", scraparr_services=\"bazarr\", alias=\"$bazarr\"}",
           "fullMetaSearch": false,
           "includeNullMetadata": true,
           "legendFormat": "__auto",
@@ -3723,7 +3728,7 @@
     {
       "datasource": {
         "type": "prometheus",
-        "uid": "${datasource}"
+        "uid": "${ds_prometheus}"
       },
       "fieldConfig": {
         "defaults": {
@@ -3769,16 +3774,16 @@
         "textMode": "auto",
         "wideLayout": true
       },
-      "pluginVersion": "12.1.1",
+      "pluginVersion": "12.3.0",
       "targets": [
         {
           "datasource": {
             "type": "prometheus",
-            "uid": "prometheus"
+            "uid": "${ds_prometheus}"
           },
           "disableTextWrap": false,
           "editorMode": "code",
-          "expr": "bazarr_build_time{job=\"$job\", alias=\"$bazarr\"} * 1000",
+          "expr": "bazarr_build_time{job=~\"$job\", alias=\"$bazarr\"} * 1000",
           "fullMetaSearch": false,
           "includeNullMetadata": true,
           "legendFormat": "__auto",
@@ -3793,7 +3798,7 @@
     {
       "datasource": {
         "type": "prometheus",
-        "uid": "${datasource}"
+        "uid": "${ds_prometheus}"
       },
       "fieldConfig": {
         "defaults": {
@@ -3846,16 +3851,16 @@
         "textMode": "auto",
         "wideLayout": true
       },
-      "pluginVersion": "12.1.1",
+      "pluginVersion": "12.3.0",
       "targets": [
         {
           "datasource": {
             "type": "prometheus",
-            "uid": "prometheus"
+            "uid": "${ds_prometheus}"
           },
           "disableTextWrap": false,
           "editorMode": "code",
-          "expr": "time() - bazarr_last_scrape{job=\"$job\", alias=\"$bazarr\"}",
+          "expr": "time() - bazarr_last_scrape{job=~\"$job\", alias=\"$bazarr\"}",
           "fullMetaSearch": false,
           "includeNullMetadata": true,
           "legendFormat": "__auto",
@@ -3870,7 +3875,7 @@
     {
       "datasource": {
         "type": "prometheus",
-        "uid": "${datasource}"
+        "uid": "${ds_prometheus}"
       },
       "fieldConfig": {
         "defaults": {
@@ -3915,12 +3920,12 @@
         "textMode": "auto",
         "wideLayout": true
       },
-      "pluginVersion": "12.1.1",
+      "pluginVersion": "12.3.0",
       "targets": [
         {
           "datasource": {
             "type": "prometheus",
-            "uid": "prometheus"
+            "uid": "${ds_prometheus}"
           },
           "disableTextWrap": false,
           "editorMode": "code",
@@ -3939,7 +3944,7 @@
     {
       "datasource": {
         "type": "prometheus",
-        "uid": "${datasource}"
+        "uid": "${ds_prometheus}"
       },
       "fieldConfig": {
         "defaults": {
@@ -4012,12 +4017,12 @@
         "textMode": "auto",
         "wideLayout": true
       },
-      "pluginVersion": "12.1.1",
+      "pluginVersion": "12.3.0",
       "targets": [
         {
           "datasource": {
             "type": "prometheus",
-            "uid": "prometheus"
+            "uid": "${ds_prometheus}"
           },
           "disableTextWrap": false,
           "editorMode": "builder",
@@ -4032,7 +4037,7 @@
         {
           "datasource": {
             "type": "prometheus",
-            "uid": "${datasource}"
+            "uid": "${ds_prometheus}"
           },
           "disableTextWrap": false,
           "editorMode": "builder",
@@ -4053,7 +4058,7 @@
     {
       "datasource": {
         "type": "prometheus",
-        "uid": "prometheus"
+        "uid": "${ds_prometheus}"
       },
       "fieldConfig": {
         "defaults": {
@@ -4122,12 +4127,12 @@
         "textMode": "auto",
         "wideLayout": true
       },
-      "pluginVersion": "12.1.1",
+      "pluginVersion": "12.3.0",
       "targets": [
         {
           "datasource": {
             "type": "prometheus",
-            "uid": "${datasource}"
+            "uid": "${ds_prometheus}"
           },
           "disableTextWrap": false,
           "editorMode": "builder",
@@ -4142,7 +4147,7 @@
         {
           "datasource": {
             "type": "prometheus",
-            "uid": "prometheus"
+            "uid": "${ds_prometheus}"
           },
           "disableTextWrap": false,
           "editorMode": "builder",
@@ -4163,7 +4168,7 @@
     {
       "datasource": {
         "type": "prometheus",
-        "uid": "${datasource}"
+        "uid": "${ds_prometheus}"
       },
       "fieldConfig": {
         "defaults": {
@@ -4207,12 +4212,12 @@
         "textMode": "auto",
         "wideLayout": true
       },
-      "pluginVersion": "12.1.1",
+      "pluginVersion": "12.3.0",
       "targets": [
         {
           "datasource": {
             "type": "prometheus",
-            "uid": "prometheus"
+            "uid": "${ds_prometheus}"
           },
           "disableTextWrap": false,
           "editorMode": "builder",
@@ -4231,7 +4236,7 @@
     {
       "datasource": {
         "type": "prometheus",
-        "uid": "${datasource}"
+        "uid": "${ds_prometheus}"
       },
       "fieldConfig": {
         "defaults": {
@@ -4296,12 +4301,12 @@
         "textMode": "auto",
         "wideLayout": true
       },
-      "pluginVersion": "12.1.1",
+      "pluginVersion": "12.3.0",
       "targets": [
         {
           "datasource": {
             "type": "prometheus",
-            "uid": "prometheus"
+            "uid": "${ds_prometheus}"
           },
           "disableTextWrap": false,
           "editorMode": "builder",
@@ -4336,23 +4341,15 @@
   ],
   "preload": false,
   "refresh": "",
-  "schemaVersion": 41,
+  "schemaVersion": 42,
   "tags": [],
   "templating": {
     "list": [
       {
-        "allowCustomValue": false,
-        "current": {
-          "text": [
-            "Prometheus"
-          ],
-          "value": [
-            "prometheus"
-          ]
-        },
-        "label": "DataSource",
-        "multi": true,
-        "name": "datasource",
+        "current": {},
+        "includeAll": false,
+        "label": "Datasource",
+        "name": "ds_prometheus",
         "options": [],
         "query": "prometheus",
         "refresh": 1,
@@ -4361,17 +4358,10 @@
       },
       {
         "allowCustomValue": false,
-        "current": {
-          "text": [
-            "scraparr"
-          ],
-          "value": [
-            "scraparr"
-          ]
-        },
+        "current": {},
         "datasource": {
           "type": "prometheus",
-          "uid": "prometheus"
+          "uid": "${ds_prometheus}"
         },
         "definition": "label_values(scraparr_services_up,job)",
         "multi": true,
@@ -4388,13 +4378,10 @@
       },
       {
         "allowCustomValue": false,
-        "current": {
-          "text": "All",
-          "value": "$__all"
-        },
+        "current": {},
         "datasource": {
           "type": "prometheus",
-          "uid": "${datasource}"
+          "uid": "${ds_prometheus}"
         },
         "definition": "label_values(scraparr_services_up{scraparr_services=\"prowlarr\"},alias)",
         "hide": 2,
@@ -4412,13 +4399,10 @@
       },
       {
         "allowCustomValue": false,
-        "current": {
-          "text": "All",
-          "value": "$__all"
-        },
+        "current": {},
         "datasource": {
           "type": "prometheus",
-          "uid": "prometheus"
+          "uid": "${ds_prometheus}"
         },
         "definition": "label_values(scraparr_services_up{scraparr_services=\"sonarr\"},alias)",
         "hide": 2,
@@ -4436,13 +4420,10 @@
       },
       {
         "allowCustomValue": false,
-        "current": {
-          "text": "All",
-          "value": "$__all"
-        },
+        "current": {},
         "datasource": {
           "type": "prometheus",
-          "uid": "${datasource}"
+          "uid": "${ds_prometheus}"
         },
         "definition": "label_values(scraparr_services_up{scraparr_services=\"radarr\"},alias)",
         "hide": 2,
@@ -4460,10 +4441,7 @@
       },
       {
         "allowCustomValue": false,
-        "current": {
-          "text": "All",
-          "value": "$__all"
-        },
+        "current": {},
         "definition": "label_values(scraparr_services_up{scraparr_services=\"bazarr\"},alias)",
         "hide": 2,
         "includeAll": true,
@@ -4480,10 +4458,7 @@
       },
       {
         "allowCustomValue": false,
-        "current": {
-          "text": "All",
-          "value": "$__all"
-        },
+        "current": {},
         "definition": "label_values(scraparr_services_up{scraparr_services=\"readarr\"},alias)",
         "hide": 2,
         "includeAll": true,
@@ -4500,10 +4475,7 @@
       },
       {
         "allowCustomValue": false,
-        "current": {
-          "text": "All",
-          "value": "$__all"
-        },
+        "current": {},
         "definition": "label_values(scraparr_services_up{scraparr_services=\"seerr\"},alias)",
         "hide": 2,
         "includeAll": true,
@@ -4527,6 +4499,6 @@
   "timepicker": {},
   "timezone": "browser",
   "title": "Scraparr",
-  "uid": "becuowssfebcwa",
+  "uid": "scraparr",
   "version": 1
 }
