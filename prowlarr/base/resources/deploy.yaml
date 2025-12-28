@@ -53,7 +53,7 @@ spec:
           image: ghcr.io/flaresolverr/flaresolverr:v3.4.6@sha256:7962759d99d7e125e108e0f5e7f3cdbcd36161776d058d1d9b7153b92ef1af9e
           restartPolicy: Always
           ports:
-            - name: flaresolverr
+            - name: http
               containerPort: 8191
           livenessProbe:
             httpGet:
