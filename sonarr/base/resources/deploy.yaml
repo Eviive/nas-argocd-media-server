@@ -27,14 +27,14 @@ spec:
               path: /ping
               port: http
             initialDelaySeconds: 5
-            timeoutSeconds: 5
+            timeoutSeconds: 10
           readinessProbe:
             httpGet:
               path: /ping
               port: http
             initialDelaySeconds: 2
-            periodSeconds: 5
-            timeoutSeconds: 5
+            periodSeconds: 10
+            timeoutSeconds: 10
           volumeMounts:
             - name: config
               mountPath: /config

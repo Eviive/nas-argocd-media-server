@@ -60,12 +60,14 @@ spec:
               path: /
               port: http
             initialDelaySeconds: 5
+            timeoutSeconds: 10
           readinessProbe:
             httpGet:
               path: /
               port: http
             initialDelaySeconds: 2
-            periodSeconds: 2
+            periodSeconds: 10
+            timeoutSeconds: 10
       containers:
         - name: prowlarr
           image: linuxserver/prowlarr:2.3.0@sha256:67a8aaedcfd6989f3030b937a6a07007310b1dfc7ee8df16d2cbfa48d1c1158c
@@ -82,14 +84,14 @@ spec:
               path: /ping
               port: http
             initialDelaySeconds: 5
-            timeoutSeconds: 5
+            timeoutSeconds: 10
           readinessProbe:
             httpGet:
               path: /ping
               port: http
             initialDelaySeconds: 2
-            periodSeconds: 5
-            timeoutSeconds: 5
+            periodSeconds: 10
+            timeoutSeconds: 10
           volumeMounts:
             - name: prowlarr-config
               mountPath: /config
