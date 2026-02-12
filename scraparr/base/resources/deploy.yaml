@@ -13,7 +13,7 @@ spec:
     spec:
       containers:
         - name: scraparr
-          image: thegameprofi/scraparr:2.2.5@sha256:cfe07f005aa6e93221dd0bb540600aaa51ea1215968595806863f9df3dc3b26c
+          image: thegameprofi/scraparr:3.0.3@sha256:47ae07184e9d35ed7c25ed378e79a423b6f9da15056c9299d517af2bbe6f5e96
           ports:
             - name: http-metrics
               containerPort: 7100
