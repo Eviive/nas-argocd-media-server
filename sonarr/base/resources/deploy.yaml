@@ -22,19 +22,6 @@ spec:
           ports:
             - name: http
               containerPort: 8989
-          livenessProbe:
-            httpGet:
-              path: /ping
-              port: http
-            initialDelaySeconds: 5
-            timeoutSeconds: 10
-          readinessProbe:
-            httpGet:
-              path: /ping
-              port: http
-            initialDelaySeconds: 2
-            periodSeconds: 10
-            timeoutSeconds: 10
           volumeMounts:
             - name: config
               mountPath: /config
