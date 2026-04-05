@@ -6,4 +6,4 @@ on:
 jobs:
   validate:
     name: Validate
-    uses: eviive/actions/.github/workflows/validate-kustomize-overlay-changes.yaml@main
+    uses: eviive/actions/.github/workflows/validate-kustomize-overlay-changes.yaml@b5724cca4dd665a6c0087cf15c3c16b85ebcfb21 # main
