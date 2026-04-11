@@ -38,17 +38,6 @@ spec:
           volumeMounts:
             - name: prowlarr-gluetun-config
               mountPath: /gluetun
-        - name: ping
-          image: busybox@sha256:1487d0af5f52b4ba31c7e465126ee2123fe3f2305d638e7827681e7cf6c83d5e
-          command:
-            - /bin/sh
-            - -c
-            - |
-              while ! ping -c 1 cloudflare.com; do
-                echo "Ping failed, retrying in 5 seconds..."
-                sleep 5
-              done
-              echo "Ping successful, proceeding..."
         - name: flaresolverr
           image: ghcr.io/flaresolverr/flaresolverr:v3.4.6@sha256:7962759d99d7e125e108e0f5e7f3cdbcd36161776d058d1d9b7153b92ef1af9e
           restartPolicy: Always
