@@ -7,6 +7,18 @@
   "packageRules": [
     {
       "matchDatasources": [
+        "github-digest"
+      ],
+      "matchDepTypes": [
+        "action"
+      ],
+      "matchDepNames": [
+        "eviive/actions"
+      ],
+      "pinDigests": false
+    },
+    {
+      "matchDatasources": [
         "docker"
       ],
       "matchDepNames": [
